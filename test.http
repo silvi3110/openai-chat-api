@@ -68,3 +68,39 @@ Content-Type: application/json
 {
   "message": "¿Quién es Simon Borrero?"
 }
+
+POST http://localhost:3000/chat
+Content-Type: application/json
+
+{
+  "message": "¿Cuál es la capital de Bolivia?"
+}
+
+
+### PRUEBA 1 - Function Calling básico
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Cuánto gané ayer?"
+}
+
+
+### PRUEBA 2 - Ganancias de un periodo
+
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Cuánto gané del 1 de septiembre de 2026 al 5 de septiembre de 2026?"
+}
+
+
+### PRUEBA 3 - Ganancias de una fecha específica
+
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Cuánto gané el 5 de septiembre de 2026?"
+}
