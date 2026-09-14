@@ -104,3 +104,30 @@ Content-Type: application/json
 {
   "message": "¿Cuánto gané el 5 de septiembre de 2026?"
 }
+
+
+### PRUEBA 4 - Producto más vendido
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Cuál fue mi producto más vendido del 1 de septiembre de 2026 al 5 de septiembre de 2026?"
+}
+
+
+### PRUEBA 5 - Producto menos vendido
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Cuál fue mi producto menos vendido del 1 de septiembre de 2026 al 5 de septiembre de 2026?"
+}
+
+
+### PRUEBA 6 - Cliente con más compras
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Qué cliente realizó más compras del 1 de septiembre de 2026 al 5 de septiembre de 2026?"
+}
