@@ -1,0 +1,4180 @@
+{
+  "date": "2026-09-27T04:41:19.725Z",
+  "context": {
+    "today": "2026-09-27",
+    "year": 2026,
+    "timeZone": "America/La_Paz",
+    "yesterday": "2026-09-26",
+    "namedMonths": {
+      "enero": [
+        "2026-01-01",
+        "2026-01-31"
+      ],
+      "febrero": [
+        "2026-02-01",
+        "2026-02-28"
+      ],
+      "marzo": [
+        "2026-03-01",
+        "2026-03-31"
+      ],
+      "abril": [
+        "2026-04-01",
+        "2026-04-30"
+      ],
+      "mayo": [
+        "2026-05-01",
+        "2026-05-31"
+      ],
+      "junio": [
+        "2026-06-01",
+        "2026-06-30"
+      ],
+      "julio": [
+        "2026-07-01",
+        "2026-07-31"
+      ],
+      "agosto": [
+        "2026-08-01",
+        "2026-08-31"
+      ],
+      "septiembre": [
+        "2026-09-01",
+        "2026-09-30"
+      ],
+      "octubre": [
+        "2026-10-01",
+        "2026-10-31"
+      ],
+      "noviembre": [
+        "2026-11-01",
+        "2026-11-30"
+      ],
+      "diciembre": [
+        "2026-12-01",
+        "2026-12-31"
+      ]
+    },
+    "thisWeek": [
+      "2026-09-21",
+      "2026-09-27"
+    ],
+    "lastWeek": [
+      "2026-09-14",
+      "2026-09-20"
+    ],
+    "thisMonth": [
+      "2026-09-01",
+      "2026-09-30"
+    ],
+    "lastMonth": [
+      "2026-08-01",
+      "2026-08-31"
+    ]
+  },
+  "failures": 0,
+  "evidence": [
+    {
+      "label": "chat anterior",
+      "status": 200,
+      "body": {
+        "response": "Hola",
+        "conversationId": "cb835cf6-9deb-4dc5-8292-e9f9d8b479d1",
+        "responseId": "resp_08be3af30f709b7c006ab89e312f7887d1b7dc696efb8c6369"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "cb835cf6-9deb-4dc5-8292-e9f9d8b479d1",
+          "message": "Responde hola en español",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "cb835cf6-9deb-4dc5-8292-e9f9d8b479d1",
+          "response_id": "resp_08be3af30f709b7c006ab89e312f7887d1b7dc696efb8c6369"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "Responde hola en español"
+            }
+          ],
+          "response_id": "resp_08be3af30f709b7c006ab89e312f7887d1b7dc696efb8c6369",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "A septiembre año actual",
+      "status": 200,
+      "body": {
+        "response": "El cliente que compró más en septiembre fue Juan Pérez, con un total de 25 compras. Datos mock. ¿Quieres saber algo más?",
+        "conversationId": "9cd382bb-2abb-4ecf-9134-ccf4a452a7e7",
+        "responseId": "resp_0907d6a196a2c860006ab89e33976887d180344fb3e7dd0f7a"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "9cd382bb-2abb-4ecf-9134-ccf4a452a7e7",
+          "message": "¿Quién compró más en septiembre?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "9cd382bb-2abb-4ecf-9134-ccf4a452a7e7",
+          "response_id": "resp_0907d6a196a2c860006ab89e324f5887d1975e52579fc5d318"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "9cd382bb-2abb-4ecf-9134-ccf4a452a7e7",
+          "tool": "getTopCustomer",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "customer": "Juan Pérez",
+            "purchases": 25
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "9cd382bb-2abb-4ecf-9134-ccf4a452a7e7",
+          "response_id": "resp_0907d6a196a2c860006ab89e33976887d180344fb3e7dd0f7a",
+          "previous_response_id": "resp_0907d6a196a2c860006ab89e324f5887d1975e52579fc5d318"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Quién compró más en septiembre?"
+            }
+          ],
+          "response_id": "resp_0907d6a196a2c860006ab89e324f5887d1975e52579fc5d318",
+          "calls": [
+            {
+              "id": "fc_0907d6a196a2c860006ab89e32d99487d189a3e688e0613ca7",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\"}",
+              "call_id": "call_mdXxsdUKzi64W9rda1poYOSI",
+              "name": "getTopCustomer"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0907d6a196a2c860006ab89e324f5887d1975e52579fc5d318",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_mdXxsdUKzi64W9rda1poYOSI",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"customer\":\"Juan Pérez\",\"purchases\":25}"
+            }
+          ],
+          "response_id": "resp_0907d6a196a2c860006ab89e33976887d180344fb3e7dd0f7a",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "B año explícito",
+      "status": 200,
+      "body": {
+        "response": "El cliente que más compró en agosto de 2024 fue Juan Pérez, con 25 compras. (Datos mock)",
+        "conversationId": "e254df8c-1347-4bae-aa53-8f6b821d0ec2",
+        "responseId": "resp_042b5f48c5924224006ab89e36d96087d1a8294ae9efa734e1"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "e254df8c-1347-4bae-aa53-8f6b821d0ec2",
+          "message": "¿Quién compró más en agosto de 2024?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "e254df8c-1347-4bae-aa53-8f6b821d0ec2",
+          "response_id": "resp_042b5f48c5924224006ab89e34e15487d1ad0e32c35055fed4"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "e254df8c-1347-4bae-aa53-8f6b821d0ec2",
+          "tool": "getTopCustomer",
+          "arguments": {
+            "startDate": "2024-08-01",
+            "endDate": "2024-08-31"
+          },
+          "result": {
+            "startDate": "2024-08-01",
+            "endDate": "2024-08-31",
+            "customer": "Juan Pérez",
+            "purchases": 25
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "e254df8c-1347-4bae-aa53-8f6b821d0ec2",
+          "response_id": "resp_042b5f48c5924224006ab89e36d96087d1a8294ae9efa734e1",
+          "previous_response_id": "resp_042b5f48c5924224006ab89e34e15487d1ad0e32c35055fed4"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Quién compró más en agosto de 2024?"
+            }
+          ],
+          "response_id": "resp_042b5f48c5924224006ab89e34e15487d1ad0e32c35055fed4",
+          "calls": [
+            {
+              "id": "fc_042b5f48c5924224006ab89e363a4887d1879ea7fdbeac291e",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2024-08-01\",\"endDate\":\"2024-08-31\"}",
+              "call_id": "call_nuw4aZRYgAkIl8yjUp5g1hdu",
+              "name": "getTopCustomer"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_042b5f48c5924224006ab89e34e15487d1ad0e32c35055fed4",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_nuw4aZRYgAkIl8yjUp5g1hdu",
+              "output": "{\"startDate\":\"2024-08-01\",\"endDate\":\"2024-08-31\",\"customer\":\"Juan Pérez\",\"purchases\":25}"
+            }
+          ],
+          "response_id": "resp_042b5f48c5924224006ab89e36d96087d1a8294ae9efa734e1",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "C casual producto",
+      "status": 200,
+      "body": {
+        "response": "El producto que vendiste más este mes es Leche PIL, con 150 unidades vendidas. (Datos mock)",
+        "conversationId": "c7d49644-ceaa-49dd-a741-e9da37e20b1d",
+        "responseId": "resp_09d2c287f2b3b672006ab89e3a3c0c87d1ab1dcc373b9995ef"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "c7d49644-ceaa-49dd-a741-e9da37e20b1d",
+          "message": "¿Cuál vendí más este mes?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "c7d49644-ceaa-49dd-a741-e9da37e20b1d",
+          "response_id": "resp_09d2c287f2b3b672006ab89e38028c87d1891a6dcef3f17025"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "c7d49644-ceaa-49dd-a741-e9da37e20b1d",
+          "tool": "getBestSellingProduct",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Leche PIL",
+            "quantity": 150
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "c7d49644-ceaa-49dd-a741-e9da37e20b1d",
+          "response_id": "resp_09d2c287f2b3b672006ab89e3a3c0c87d1ab1dcc373b9995ef",
+          "previous_response_id": "resp_09d2c287f2b3b672006ab89e38028c87d1891a6dcef3f17025"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuál vendí más este mes?"
+            }
+          ],
+          "response_id": "resp_09d2c287f2b3b672006ab89e38028c87d1891a6dcef3f17025",
+          "calls": [
+            {
+              "id": "fc_09d2c287f2b3b672006ab89e39626087d1a2f46f39170155a4",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\"}",
+              "call_id": "call_dFrS8lW5aODNKpXp3A3yfjmr",
+              "name": "getBestSellingProduct"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_09d2c287f2b3b672006ab89e38028c87d1891a6dcef3f17025",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_dFrS8lW5aODNKpXp3A3yfjmr",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Leche PIL\",\"quantity\":150}"
+            }
+          ],
+          "response_id": "resp_09d2c287f2b3b672006ab89e3a3c0c87d1ab1dcc373b9995ef",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "D ayer",
+      "status": 200,
+      "body": {
+        "response": "Ayer ganaste 1000 (Datos mock). ¿Quieres saber algo más?",
+        "conversationId": "0281613e-a243-4607-b816-5db607d1b870",
+        "responseId": "resp_0ed2fd8f125ef302006ab89e3d20f887d185508e79375841c3"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "0281613e-a243-4607-b816-5db607d1b870",
+          "message": "¿Cuánto gané ayer?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "0281613e-a243-4607-b816-5db607d1b870",
+          "response_id": "resp_0ed2fd8f125ef302006ab89e3bc38087d1b539e0a598b0dde4"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "0281613e-a243-4607-b816-5db607d1b870",
+          "tool": "getProfits",
+          "arguments": {
+            "startDate": "2026-09-26",
+            "endDate": "2026-09-26"
+          },
+          "result": {
+            "startDate": "2026-09-26",
+            "endDate": "2026-09-26",
+            "profits": 1000
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "0281613e-a243-4607-b816-5db607d1b870",
+          "response_id": "resp_0ed2fd8f125ef302006ab89e3d20f887d185508e79375841c3",
+          "previous_response_id": "resp_0ed2fd8f125ef302006ab89e3bc38087d1b539e0a598b0dde4"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané ayer?"
+            }
+          ],
+          "response_id": "resp_0ed2fd8f125ef302006ab89e3bc38087d1b539e0a598b0dde4",
+          "calls": [
+            {
+              "id": "fc_0ed2fd8f125ef302006ab89e3c712087d1a73d4fd1fb1020da",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-26\",\"endDate\":\"2026-09-26\"}",
+              "call_id": "call_LVpSk3IP42rlVkdbTmOOrIYO",
+              "name": "getProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0ed2fd8f125ef302006ab89e3bc38087d1b539e0a598b0dde4",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_LVpSk3IP42rlVkdbTmOOrIYO",
+              "output": "{\"startDate\":\"2026-09-26\",\"endDate\":\"2026-09-26\",\"profits\":1000}"
+            }
+          ],
+          "response_id": "resp_0ed2fd8f125ef302006ab89e3d20f887d185508e79375841c3",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "E producto",
+      "status": 200,
+      "body": {
+        "response": "Este mes ganaste 240 con la venta de Yogurt Natural. (Datos mock)",
+        "conversationId": "45dfe2e3-e5a1-4ef7-8a1d-7dbe9f99cb12",
+        "responseId": "resp_073e2acdb1267b14006ab89e3fcbbc87d1b39698bee9f53b81"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "45dfe2e3-e5a1-4ef7-8a1d-7dbe9f99cb12",
+          "message": "¿Cuánto gané con Yogurt Natural este mes?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "45dfe2e3-e5a1-4ef7-8a1d-7dbe9f99cb12",
+          "response_id": "resp_073e2acdb1267b14006ab89e3e4b2887d1b8f516f6510e9654"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "45dfe2e3-e5a1-4ef7-8a1d-7dbe9f99cb12",
+          "tool": "getProductProfits",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Yogurt Natural"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Yogurt Natural",
+            "profits": 240,
+            "found": true
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "45dfe2e3-e5a1-4ef7-8a1d-7dbe9f99cb12",
+          "response_id": "resp_073e2acdb1267b14006ab89e3fcbbc87d1b39698bee9f53b81",
+          "previous_response_id": "resp_073e2acdb1267b14006ab89e3e4b2887d1b8f516f6510e9654"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané con Yogurt Natural este mes?"
+            }
+          ],
+          "response_id": "resp_073e2acdb1267b14006ab89e3e4b2887d1b8f516f6510e9654",
+          "calls": [
+            {
+              "id": "fc_073e2acdb1267b14006ab89e3ed17087d199bb9fce397cd325",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Yogurt Natural\"}",
+              "call_id": "call_q4EXjJRi8V2Rf97IkvTzhTlE",
+              "name": "getProductProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_073e2acdb1267b14006ab89e3e4b2887d1b8f516f6510e9654",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_q4EXjJRi8V2Rf97IkvTzhTlE",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Yogurt Natural\",\"profits\":240,\"found\":true}"
+            }
+          ],
+          "response_id": "resp_073e2acdb1267b14006ab89e3fcbbc87d1b39698bee9f53b81",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "M1 turno 1",
+      "status": 200,
+      "body": {
+        "response": "El producto que vendiste más este mes es Leche PIL, con 150 unidades vendidas. Datos mock. ¿Quieres saber algo más sobre las ventas?",
+        "conversationId": "e214e153-8ce8-48de-b310-b955e2b08c26",
+        "responseId": "resp_075719c93331ae82006ab89e42395c87d19348bcbdd853a2fd"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "e214e153-8ce8-48de-b310-b955e2b08c26",
+          "message": "¿Cuál vendí más este mes?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "e214e153-8ce8-48de-b310-b955e2b08c26",
+          "response_id": "resp_075719c93331ae82006ab89e41260487d1a97c23ec3dc9b34c"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "e214e153-8ce8-48de-b310-b955e2b08c26",
+          "tool": "getBestSellingProduct",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Leche PIL",
+            "quantity": 150
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "e214e153-8ce8-48de-b310-b955e2b08c26",
+          "response_id": "resp_075719c93331ae82006ab89e42395c87d19348bcbdd853a2fd",
+          "previous_response_id": "resp_075719c93331ae82006ab89e41260487d1a97c23ec3dc9b34c"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuál vendí más este mes?"
+            }
+          ],
+          "response_id": "resp_075719c93331ae82006ab89e41260487d1a97c23ec3dc9b34c",
+          "calls": [
+            {
+              "id": "fc_075719c93331ae82006ab89e419bec87d18ee0081beda8812f",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\"}",
+              "call_id": "call_P3xr2lUWiLpEwQMin0kS1IJv",
+              "name": "getBestSellingProduct"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_075719c93331ae82006ab89e41260487d1a97c23ec3dc9b34c",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_P3xr2lUWiLpEwQMin0kS1IJv",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Leche PIL\",\"quantity\":150}"
+            }
+          ],
+          "response_id": "resp_075719c93331ae82006ab89e42395c87d19348bcbdd853a2fd",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "M2 turno 1",
+      "status": 200,
+      "body": {
+        "response": "El cliente que compró más en septiembre fue Juan Pérez, con 25 compras. (Datos mock)",
+        "conversationId": "cfcede83-401b-424b-bf7d-c2404704e108",
+        "responseId": "resp_0de2c1b75e9dc457006ab89e44591487d1a68572167bf07b0d"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "cfcede83-401b-424b-bf7d-c2404704e108",
+          "message": "¿Quién compró más en septiembre?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "cfcede83-401b-424b-bf7d-c2404704e108",
+          "response_id": "resp_0de2c1b75e9dc457006ab89e435ce887d1a331c9ebf42b7ae1"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "cfcede83-401b-424b-bf7d-c2404704e108",
+          "tool": "getTopCustomer",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "customer": "Juan Pérez",
+            "purchases": 25
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "cfcede83-401b-424b-bf7d-c2404704e108",
+          "response_id": "resp_0de2c1b75e9dc457006ab89e44591487d1a68572167bf07b0d",
+          "previous_response_id": "resp_0de2c1b75e9dc457006ab89e435ce887d1a331c9ebf42b7ae1"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Quién compró más en septiembre?"
+            }
+          ],
+          "response_id": "resp_0de2c1b75e9dc457006ab89e435ce887d1a331c9ebf42b7ae1",
+          "calls": [
+            {
+              "id": "fc_0de2c1b75e9dc457006ab89e43ba1887d1bbdc54fc8443754a",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\"}",
+              "call_id": "call_rvLmhtTzHRvpsdEWnaVbGVh4",
+              "name": "getTopCustomer"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0de2c1b75e9dc457006ab89e435ce887d1a331c9ebf42b7ae1",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_rvLmhtTzHRvpsdEWnaVbGVh4",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"customer\":\"Juan Pérez\",\"purchases\":25}"
+            }
+          ],
+          "response_id": "resp_0de2c1b75e9dc457006ab89e44591487d1a68572167bf07b0d",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "M1 turno 2 intercalado",
+      "status": 200,
+      "body": {
+        "response": "El producto que menos vendiste este mes es Yogurt Natural, con 20 unidades vendidas. Datos mock. ¿Quieres saber algo más?",
+        "conversationId": "e214e153-8ce8-48de-b310-b955e2b08c26",
+        "responseId": "resp_075719c93331ae82006ab89e46561887d1a642f73c263edae5"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "e214e153-8ce8-48de-b310-b955e2b08c26",
+          "message": "¿Y el que menos?",
+          "previous_response_id": "resp_075719c93331ae82006ab89e42395c87d19348bcbdd853a2fd",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "e214e153-8ce8-48de-b310-b955e2b08c26",
+          "response_id": "resp_075719c93331ae82006ab89e45425c87d1ba6e76ae05e19772",
+          "previous_response_id": "resp_075719c93331ae82006ab89e42395c87d19348bcbdd853a2fd"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "e214e153-8ce8-48de-b310-b955e2b08c26",
+          "tool": "getWorstSellingProduct",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Yogurt Natural",
+            "quantity": 20
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "e214e153-8ce8-48de-b310-b955e2b08c26",
+          "response_id": "resp_075719c93331ae82006ab89e46561887d1a642f73c263edae5",
+          "previous_response_id": "resp_075719c93331ae82006ab89e45425c87d1ba6e76ae05e19772"
+        }
+      ],
+      "protocol": [
+        {
+          "previous_response_id": "resp_075719c93331ae82006ab89e42395c87d19348bcbdd853a2fd",
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Y el que menos?"
+            }
+          ],
+          "response_id": "resp_075719c93331ae82006ab89e45425c87d1ba6e76ae05e19772",
+          "calls": [
+            {
+              "id": "fc_075719c93331ae82006ab89e45bb3087d1a7c627c5984db352",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\"}",
+              "call_id": "call_eOaYY2oppmP2y8nf5npIgPsG",
+              "name": "getWorstSellingProduct"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_075719c93331ae82006ab89e45425c87d1ba6e76ae05e19772",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_eOaYY2oppmP2y8nf5npIgPsG",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Yogurt Natural\",\"quantity\":20}"
+            }
+          ],
+          "response_id": "resp_075719c93331ae82006ab89e46561887d1a642f73c263edae5",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "M2 turno 2 intercalado",
+      "status": 200,
+      "body": {
+        "response": "En agosto, el cliente que más compró también fue Juan Pérez, con 25 compras. (Datos mock)",
+        "conversationId": "cfcede83-401b-424b-bf7d-c2404704e108",
+        "responseId": "resp_0de2c1b75e9dc457006ab89e48549087d1b37be56de7632880"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "cfcede83-401b-424b-bf7d-c2404704e108",
+          "message": "¿Y en agosto?",
+          "previous_response_id": "resp_0de2c1b75e9dc457006ab89e44591487d1a68572167bf07b0d",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "cfcede83-401b-424b-bf7d-c2404704e108",
+          "response_id": "resp_0de2c1b75e9dc457006ab89e47502887d1844bcfaaac758cd2",
+          "previous_response_id": "resp_0de2c1b75e9dc457006ab89e44591487d1a68572167bf07b0d"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "cfcede83-401b-424b-bf7d-c2404704e108",
+          "tool": "getTopCustomer",
+          "arguments": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-08-31"
+          },
+          "result": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-08-31",
+            "customer": "Juan Pérez",
+            "purchases": 25
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "cfcede83-401b-424b-bf7d-c2404704e108",
+          "response_id": "resp_0de2c1b75e9dc457006ab89e48549087d1b37be56de7632880",
+          "previous_response_id": "resp_0de2c1b75e9dc457006ab89e47502887d1844bcfaaac758cd2"
+        }
+      ],
+      "protocol": [
+        {
+          "previous_response_id": "resp_0de2c1b75e9dc457006ab89e44591487d1a68572167bf07b0d",
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Y en agosto?"
+            }
+          ],
+          "response_id": "resp_0de2c1b75e9dc457006ab89e47502887d1844bcfaaac758cd2",
+          "calls": [
+            {
+              "id": "fc_0de2c1b75e9dc457006ab89e47b24487d18ef8bb646c95175f",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-08-01\",\"endDate\":\"2026-08-31\"}",
+              "call_id": "call_413uHHAF72mGM42qI81VtAkV",
+              "name": "getTopCustomer"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0de2c1b75e9dc457006ab89e47502887d1844bcfaaac758cd2",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_413uHHAF72mGM42qI81VtAkV",
+              "output": "{\"startDate\":\"2026-08-01\",\"endDate\":\"2026-08-31\",\"customer\":\"Juan Pérez\",\"purchases\":25}"
+            }
+          ],
+          "response_id": "resp_0de2c1b75e9dc457006ab89e48549087d1b37be56de7632880",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "M3 turno 1",
+      "status": 200,
+      "body": {
+        "response": "Este mes has ganado 1000 (Datos mock). ¿Quieres saber algo más?",
+        "conversationId": "afc399a6-0dfa-4fec-814a-5953921a3b85",
+        "responseId": "resp_0d21892dbf4f6d32006ab89e4aa34c87d1bb0565eb3de6233b"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "afc399a6-0dfa-4fec-814a-5953921a3b85",
+          "message": "¿Cuánto gané este mes?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "afc399a6-0dfa-4fec-814a-5953921a3b85",
+          "response_id": "resp_0d21892dbf4f6d32006ab89e4996b487d1be1bb0167a563e6a"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "afc399a6-0dfa-4fec-814a-5953921a3b85",
+          "tool": "getProfits",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "profits": 1000
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "afc399a6-0dfa-4fec-814a-5953921a3b85",
+          "response_id": "resp_0d21892dbf4f6d32006ab89e4aa34c87d1bb0565eb3de6233b",
+          "previous_response_id": "resp_0d21892dbf4f6d32006ab89e4996b487d1be1bb0167a563e6a"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané este mes?"
+            }
+          ],
+          "response_id": "resp_0d21892dbf4f6d32006ab89e4996b487d1be1bb0167a563e6a",
+          "calls": [
+            {
+              "id": "fc_0d21892dbf4f6d32006ab89e49f7ec87d1920a0cf7eeb49255",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\"}",
+              "call_id": "call_EBPoKcJCoEqfEI7DVdwU11Hf",
+              "name": "getProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0d21892dbf4f6d32006ab89e4996b487d1be1bb0167a563e6a",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_EBPoKcJCoEqfEI7DVdwU11Hf",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"profits\":1000}"
+            }
+          ],
+          "response_id": "resp_0d21892dbf4f6d32006ab89e4aa34c87d1bb0565eb3de6233b",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "M3 turno 2",
+      "status": 200,
+      "body": {
+        "response": "El mes pasado también ganaste 1000 (Datos mock). ¿Deseas comparar o saber algo más?",
+        "conversationId": "afc399a6-0dfa-4fec-814a-5953921a3b85",
+        "responseId": "resp_0d21892dbf4f6d32006ab89e4db7ac87d183c1f1ccf6a63d07"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "afc399a6-0dfa-4fec-814a-5953921a3b85",
+          "message": "¿Y el mes pasado?",
+          "previous_response_id": "resp_0d21892dbf4f6d32006ab89e4aa34c87d1bb0565eb3de6233b",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "afc399a6-0dfa-4fec-814a-5953921a3b85",
+          "response_id": "resp_0d21892dbf4f6d32006ab89e4bedcc87d1a1c9d64079ef0ee6",
+          "previous_response_id": "resp_0d21892dbf4f6d32006ab89e4aa34c87d1bb0565eb3de6233b"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "afc399a6-0dfa-4fec-814a-5953921a3b85",
+          "tool": "getProfits",
+          "arguments": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-08-31"
+          },
+          "result": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-08-31",
+            "profits": 1000
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "afc399a6-0dfa-4fec-814a-5953921a3b85",
+          "response_id": "resp_0d21892dbf4f6d32006ab89e4db7ac87d183c1f1ccf6a63d07",
+          "previous_response_id": "resp_0d21892dbf4f6d32006ab89e4bedcc87d1a1c9d64079ef0ee6"
+        }
+      ],
+      "protocol": [
+        {
+          "previous_response_id": "resp_0d21892dbf4f6d32006ab89e4aa34c87d1bb0565eb3de6233b",
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Y el mes pasado?"
+            }
+          ],
+          "response_id": "resp_0d21892dbf4f6d32006ab89e4bedcc87d1a1c9d64079ef0ee6",
+          "calls": [
+            {
+              "id": "fc_0d21892dbf4f6d32006ab89e4c56bc87d187de0ee637275349",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-08-01\",\"endDate\":\"2026-08-31\"}",
+              "call_id": "call_rMD3AsPQGzNZ1pEjfQqWDNuZ",
+              "name": "getProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0d21892dbf4f6d32006ab89e4bedcc87d1a1c9d64079ef0ee6",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_rMD3AsPQGzNZ1pEjfQqWDNuZ",
+              "output": "{\"startDate\":\"2026-08-01\",\"endDate\":\"2026-08-31\",\"profits\":1000}"
+            }
+          ],
+          "response_id": "resp_0d21892dbf4f6d32006ab89e4db7ac87d183c1f1ccf6a63d07",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "M4 turno 1",
+      "status": 200,
+      "body": {
+        "response": "Este mes ganaste 240 con Yogurt Natural. Datos mock. ¿Quieres saber algo más?",
+        "conversationId": "724ee412-57a2-4a6c-814a-dbeb8bfc9468",
+        "responseId": "resp_0b7db4af19ae2935006ab89e5021a887d19c0bba6b29187c34"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "724ee412-57a2-4a6c-814a-dbeb8bfc9468",
+          "message": "¿Cuánto gané con Yogurt Natural este mes?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "724ee412-57a2-4a6c-814a-dbeb8bfc9468",
+          "response_id": "resp_0b7db4af19ae2935006ab89e4eff9887d1a4fe0e29c06ae020"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "724ee412-57a2-4a6c-814a-dbeb8bfc9468",
+          "tool": "getProductProfits",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Yogurt Natural"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Yogurt Natural",
+            "profits": 240,
+            "found": true
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "724ee412-57a2-4a6c-814a-dbeb8bfc9468",
+          "response_id": "resp_0b7db4af19ae2935006ab89e5021a887d19c0bba6b29187c34",
+          "previous_response_id": "resp_0b7db4af19ae2935006ab89e4eff9887d1a4fe0e29c06ae020"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané con Yogurt Natural este mes?"
+            }
+          ],
+          "response_id": "resp_0b7db4af19ae2935006ab89e4eff9887d1a4fe0e29c06ae020",
+          "calls": [
+            {
+              "id": "fc_0b7db4af19ae2935006ab89e4f61b487d182661f05cb9c65f2",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Yogurt Natural\"}",
+              "call_id": "call_sMTrsUpGoqP0BTkMPTaA7DYH",
+              "name": "getProductProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0b7db4af19ae2935006ab89e4eff9887d1a4fe0e29c06ae020",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_sMTrsUpGoqP0BTkMPTaA7DYH",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Yogurt Natural\",\"profits\":240,\"found\":true}"
+            }
+          ],
+          "response_id": "resp_0b7db4af19ae2935006ab89e5021a887d19c0bba6b29187c34",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "M4 turno 2",
+      "status": 200,
+      "body": {
+        "response": "El mes pasado también ganaste 240 con Yogurt Natural. Datos mock. ¿Algo más que quieras consultar?",
+        "conversationId": "724ee412-57a2-4a6c-814a-dbeb8bfc9468",
+        "responseId": "resp_0b7db4af19ae2935006ab89e52248887d19ba83a3f624be23f"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "724ee412-57a2-4a6c-814a-dbeb8bfc9468",
+          "message": "¿Y el mes pasado?",
+          "previous_response_id": "resp_0b7db4af19ae2935006ab89e5021a887d19c0bba6b29187c34",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "724ee412-57a2-4a6c-814a-dbeb8bfc9468",
+          "response_id": "resp_0b7db4af19ae2935006ab89e51169487d1856b37c81a3d27a4",
+          "previous_response_id": "resp_0b7db4af19ae2935006ab89e5021a887d19c0bba6b29187c34"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "724ee412-57a2-4a6c-814a-dbeb8bfc9468",
+          "tool": "getProductProfits",
+          "arguments": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-08-31",
+            "product": "Yogurt Natural"
+          },
+          "result": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-08-31",
+            "product": "Yogurt Natural",
+            "profits": 240,
+            "found": true
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "724ee412-57a2-4a6c-814a-dbeb8bfc9468",
+          "response_id": "resp_0b7db4af19ae2935006ab89e52248887d19ba83a3f624be23f",
+          "previous_response_id": "resp_0b7db4af19ae2935006ab89e51169487d1856b37c81a3d27a4"
+        }
+      ],
+      "protocol": [
+        {
+          "previous_response_id": "resp_0b7db4af19ae2935006ab89e5021a887d19c0bba6b29187c34",
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Y el mes pasado?"
+            }
+          ],
+          "response_id": "resp_0b7db4af19ae2935006ab89e51169487d1856b37c81a3d27a4",
+          "calls": [
+            {
+              "id": "fc_0b7db4af19ae2935006ab89e51723c87d18cdef9b3160a44fb",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-08-01\",\"endDate\":\"2026-08-31\",\"product\":\"Yogurt Natural\"}",
+              "call_id": "call_EFxqGnoz1dmum3T53LiGYJyq",
+              "name": "getProductProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0b7db4af19ae2935006ab89e51169487d1856b37c81a3d27a4",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_EFxqGnoz1dmum3T53LiGYJyq",
+              "output": "{\"startDate\":\"2026-08-01\",\"endDate\":\"2026-08-31\",\"product\":\"Yogurt Natural\",\"profits\":240,\"found\":true}"
+            }
+          ],
+          "response_id": "resp_0b7db4af19ae2935006ab89e52248887d19ba83a3f624be23f",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "mes pasado independiente",
+      "status": 200,
+      "body": {
+        "response": "El mes pasado ganaste 1000 (Datos mock). ¿Quieres saber algo más sobre ese periodo?",
+        "conversationId": "2bb4a65c-ac0a-422f-b730-3d34cfe709a9",
+        "responseId": "resp_0f55521985102b3a006ab89e54633487d1be04d54c5764cb37"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "2bb4a65c-ac0a-422f-b730-3d34cfe709a9",
+          "message": "¿Cuánto gané el mes pasado?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "2bb4a65c-ac0a-422f-b730-3d34cfe709a9",
+          "response_id": "resp_0f55521985102b3a006ab89e532c0087d198f25684d3d446ba"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "2bb4a65c-ac0a-422f-b730-3d34cfe709a9",
+          "tool": "getProfits",
+          "arguments": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-08-31"
+          },
+          "result": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-08-31",
+            "profits": 1000
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "2bb4a65c-ac0a-422f-b730-3d34cfe709a9",
+          "response_id": "resp_0f55521985102b3a006ab89e54633487d1be04d54c5764cb37",
+          "previous_response_id": "resp_0f55521985102b3a006ab89e532c0087d198f25684d3d446ba"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané el mes pasado?"
+            }
+          ],
+          "response_id": "resp_0f55521985102b3a006ab89e532c0087d198f25684d3d446ba",
+          "calls": [
+            {
+              "id": "fc_0f55521985102b3a006ab89e53a4ac87d1a7e423e729b51440",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-08-01\",\"endDate\":\"2026-08-31\"}",
+              "call_id": "call_tPpQf9akXVql86zQokeyy2dr",
+              "name": "getProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0f55521985102b3a006ab89e532c0087d198f25684d3d446ba",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_tPpQf9akXVql86zQokeyy2dr",
+              "output": "{\"startDate\":\"2026-08-01\",\"endDate\":\"2026-08-31\",\"profits\":1000}"
+            }
+          ],
+          "response_id": "resp_0f55521985102b3a006ab89e54633487d1be04d54c5764cb37",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "casual cliente sin periodo",
+      "status": 200,
+      "body": {
+        "response": "Para responderte necesito que me indiques el periodo del que quieres saber quién compró más. ¿Quieres saberlo de este mes, de la semana, del año, o algún otro periodo específico?",
+        "conversationId": "179bb326-891f-4e26-bc7d-e7fe4185e485",
+        "responseId": "resp_01a9d83358ba377e006ab89e5566e487d1879330d4569e92de"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "179bb326-891f-4e26-bc7d-e7fe4185e485",
+          "message": "¿Quién compró más?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "179bb326-891f-4e26-bc7d-e7fe4185e485",
+          "response_id": "resp_01a9d83358ba377e006ab89e5566e487d1879330d4569e92de"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Quién compró más?"
+            }
+          ],
+          "response_id": "resp_01a9d83358ba377e006ab89e5566e487d1879330d4569e92de",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "hoy",
+      "status": 200,
+      "body": {
+        "response": "Hoy has ganado 1000. (Datos mock)",
+        "conversationId": "86d97db1-d1eb-4966-be58-08c8074e4639",
+        "responseId": "resp_0060a3e6d8b475ea006ab89e577cf887d1a1598dea2df82e53"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "86d97db1-d1eb-4966-be58-08c8074e4639",
+          "message": "¿Cuánto gané hoy?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "86d97db1-d1eb-4966-be58-08c8074e4639",
+          "response_id": "resp_0060a3e6d8b475ea006ab89e568a0887d1b33b2bb7b3f35a56"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "86d97db1-d1eb-4966-be58-08c8074e4639",
+          "tool": "getProfits",
+          "arguments": {
+            "startDate": "2026-09-27",
+            "endDate": "2026-09-27"
+          },
+          "result": {
+            "startDate": "2026-09-27",
+            "endDate": "2026-09-27",
+            "profits": 1000
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "86d97db1-d1eb-4966-be58-08c8074e4639",
+          "response_id": "resp_0060a3e6d8b475ea006ab89e577cf887d1a1598dea2df82e53",
+          "previous_response_id": "resp_0060a3e6d8b475ea006ab89e568a0887d1b33b2bb7b3f35a56"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané hoy?"
+            }
+          ],
+          "response_id": "resp_0060a3e6d8b475ea006ab89e568a0887d1b33b2bb7b3f35a56",
+          "calls": [
+            {
+              "id": "fc_0060a3e6d8b475ea006ab89e56e10487d1a1060499d9eba525",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-27\",\"endDate\":\"2026-09-27\"}",
+              "call_id": "call_HkjL3DtjLAgZj8hmAsMvYdWn",
+              "name": "getProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0060a3e6d8b475ea006ab89e568a0887d1b33b2bb7b3f35a56",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_HkjL3DtjLAgZj8hmAsMvYdWn",
+              "output": "{\"startDate\":\"2026-09-27\",\"endDate\":\"2026-09-27\",\"profits\":1000}"
+            }
+          ],
+          "response_id": "resp_0060a3e6d8b475ea006ab89e577cf887d1a1598dea2df82e53",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "esta semana",
+      "status": 200,
+      "body": {
+        "response": "Esta semana ganaste 1000 (Datos mock). ¿Quieres saber algo más?",
+        "conversationId": "712c8839-3e95-4391-be39-4f5500328394",
+        "responseId": "resp_00fe6c40ba3e7ae7006ab89e5984d087d1b5d0213cfca8093b"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "712c8839-3e95-4391-be39-4f5500328394",
+          "message": "¿Cuánto gané esta semana?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "712c8839-3e95-4391-be39-4f5500328394",
+          "response_id": "resp_00fe6c40ba3e7ae7006ab89e585ec487d1a1c255c03c732650"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "712c8839-3e95-4391-be39-4f5500328394",
+          "tool": "getProfits",
+          "arguments": {
+            "startDate": "2026-09-21",
+            "endDate": "2026-09-27"
+          },
+          "result": {
+            "startDate": "2026-09-21",
+            "endDate": "2026-09-27",
+            "profits": 1000
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "712c8839-3e95-4391-be39-4f5500328394",
+          "response_id": "resp_00fe6c40ba3e7ae7006ab89e5984d087d1b5d0213cfca8093b",
+          "previous_response_id": "resp_00fe6c40ba3e7ae7006ab89e585ec487d1a1c255c03c732650"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané esta semana?"
+            }
+          ],
+          "response_id": "resp_00fe6c40ba3e7ae7006ab89e585ec487d1a1c255c03c732650",
+          "calls": [
+            {
+              "id": "fc_00fe6c40ba3e7ae7006ab89e58de1887d1870c4cdf4b570010",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-21\",\"endDate\":\"2026-09-27\"}",
+              "call_id": "call_WXpQpTSXLcXLfi1lE6DxgjFr",
+              "name": "getProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_00fe6c40ba3e7ae7006ab89e585ec487d1a1c255c03c732650",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_WXpQpTSXLcXLfi1lE6DxgjFr",
+              "output": "{\"startDate\":\"2026-09-21\",\"endDate\":\"2026-09-27\",\"profits\":1000}"
+            }
+          ],
+          "response_id": "resp_00fe6c40ba3e7ae7006ab89e5984d087d1b5d0213cfca8093b",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "semana pasada",
+      "status": 200,
+      "body": {
+        "response": "La semana pasada ganaste 1000 (Datos mock). ¿Quieres saber algo más?",
+        "conversationId": "fa0155ff-76b2-4e54-8ba2-dfcc60655051",
+        "responseId": "resp_0e6590312aea505b006ab89e5bc71c87d1a6464de0cd9077c8"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "fa0155ff-76b2-4e54-8ba2-dfcc60655051",
+          "message": "¿Cuánto gané la semana pasada?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "fa0155ff-76b2-4e54-8ba2-dfcc60655051",
+          "response_id": "resp_0e6590312aea505b006ab89e5a98a487d1b676dc816a04d8ff"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "fa0155ff-76b2-4e54-8ba2-dfcc60655051",
+          "tool": "getProfits",
+          "arguments": {
+            "startDate": "2026-09-14",
+            "endDate": "2026-09-20"
+          },
+          "result": {
+            "startDate": "2026-09-14",
+            "endDate": "2026-09-20",
+            "profits": 1000
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "fa0155ff-76b2-4e54-8ba2-dfcc60655051",
+          "response_id": "resp_0e6590312aea505b006ab89e5bc71c87d1a6464de0cd9077c8",
+          "previous_response_id": "resp_0e6590312aea505b006ab89e5a98a487d1b676dc816a04d8ff"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané la semana pasada?"
+            }
+          ],
+          "response_id": "resp_0e6590312aea505b006ab89e5a98a487d1b676dc816a04d8ff",
+          "calls": [
+            {
+              "id": "fc_0e6590312aea505b006ab89e5b216c87d1b97eb231f8e7fea2",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-14\",\"endDate\":\"2026-09-20\"}",
+              "call_id": "call_kgrfpgtdh1akjJsUOJviJ1Uq",
+              "name": "getProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0e6590312aea505b006ab89e5a98a487d1b676dc816a04d8ff",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_kgrfpgtdh1akjJsUOJviJ1Uq",
+              "output": "{\"startDate\":\"2026-09-14\",\"endDate\":\"2026-09-20\",\"profits\":1000}"
+            }
+          ],
+          "response_id": "resp_0e6590312aea505b006ab89e5bc71c87d1a6464de0cd9077c8",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "día sin año",
+      "status": 200,
+      "body": {
+        "response": "El 10 de septiembre, el cliente que compró más fue Juan Pérez, con 25 compras. (Datos mock)",
+        "conversationId": "ee669fc5-600a-4e34-824a-89eabbc2b478",
+        "responseId": "resp_01ca639fb5ab2b86006ab89e5e17d887d1b3b667833b4022d0"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "ee669fc5-600a-4e34-824a-89eabbc2b478",
+          "message": "¿Quién compró más el 10 de septiembre?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "ee669fc5-600a-4e34-824a-89eabbc2b478",
+          "response_id": "resp_01ca639fb5ab2b86006ab89e5cee2487d18c35e4ac94760e49"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "ee669fc5-600a-4e34-824a-89eabbc2b478",
+          "tool": "getTopCustomer",
+          "arguments": {
+            "startDate": "2026-09-10",
+            "endDate": "2026-09-10"
+          },
+          "result": {
+            "startDate": "2026-09-10",
+            "endDate": "2026-09-10",
+            "customer": "Juan Pérez",
+            "purchases": 25
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "ee669fc5-600a-4e34-824a-89eabbc2b478",
+          "response_id": "resp_01ca639fb5ab2b86006ab89e5e17d887d1b3b667833b4022d0",
+          "previous_response_id": "resp_01ca639fb5ab2b86006ab89e5cee2487d18c35e4ac94760e49"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Quién compró más el 10 de septiembre?"
+            }
+          ],
+          "response_id": "resp_01ca639fb5ab2b86006ab89e5cee2487d18c35e4ac94760e49",
+          "calls": [
+            {
+              "id": "fc_01ca639fb5ab2b86006ab89e5d663487d1bddfecdc66fd093d",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-10\",\"endDate\":\"2026-09-10\"}",
+              "call_id": "call_iscnCfPkT5QZNChT9fw55Rkj",
+              "name": "getTopCustomer"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_01ca639fb5ab2b86006ab89e5cee2487d18c35e4ac94760e49",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_iscnCfPkT5QZNChT9fw55Rkj",
+              "output": "{\"startDate\":\"2026-09-10\",\"endDate\":\"2026-09-10\",\"customer\":\"Juan Pérez\",\"purchases\":25}"
+            }
+          ],
+          "response_id": "resp_01ca639fb5ab2b86006ab89e5e17d887d1b3b667833b4022d0",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "producto variable",
+      "status": 200,
+      "body": {
+        "response": "Este mes, ganaste 600 con la venta de Leche PIL. (Datos mock) ¿Quieres saber algo más?",
+        "conversationId": "d8656f6e-004a-4bcf-9fc2-c5371b6e85ec",
+        "responseId": "resp_0db68b8276bcabe3006ab89e60721487d19b62009ef00499e1"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "d8656f6e-004a-4bcf-9fc2-c5371b6e85ec",
+          "message": "¿Cuánto gané con Leche PIL este mes?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "d8656f6e-004a-4bcf-9fc2-c5371b6e85ec",
+          "response_id": "resp_0db68b8276bcabe3006ab89e5f2a6487d196227fef9cecacd6"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "d8656f6e-004a-4bcf-9fc2-c5371b6e85ec",
+          "tool": "getProductProfits",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Leche PIL"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Leche PIL",
+            "profits": 600,
+            "found": true
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "d8656f6e-004a-4bcf-9fc2-c5371b6e85ec",
+          "response_id": "resp_0db68b8276bcabe3006ab89e60721487d19b62009ef00499e1",
+          "previous_response_id": "resp_0db68b8276bcabe3006ab89e5f2a6487d196227fef9cecacd6"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané con Leche PIL este mes?"
+            }
+          ],
+          "response_id": "resp_0db68b8276bcabe3006ab89e5f2a6487d196227fef9cecacd6",
+          "calls": [
+            {
+              "id": "fc_0db68b8276bcabe3006ab89e5fa7cc87d1b9ffdcb89bc25596",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Leche PIL\"}",
+              "call_id": "call_d8Ufo35WADoKNWBrxDvXzo5w",
+              "name": "getProductProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0db68b8276bcabe3006ab89e5f2a6487d196227fef9cecacd6",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_d8Ufo35WADoKNWBrxDvXzo5w",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Leche PIL\",\"profits\":600,\"found\":true}"
+            }
+          ],
+          "response_id": "resp_0db68b8276bcabe3006ab89e60721487d19b62009ef00499e1",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "producto desconocido",
+      "status": 200,
+      "body": {
+        "response": "No hay datos disponibles sobre las ganancias de Queso Andino este mes. ¿Quieres consultar otro producto o periodo?",
+        "conversationId": "2a5ea0b1-27fa-4194-9dd7-e9a480cb4195",
+        "responseId": "resp_0eb2b390a087bda6006ab89e62b74087d1a2242326be48ce75"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "2a5ea0b1-27fa-4194-9dd7-e9a480cb4195",
+          "message": "¿Cuánto gané con Queso Andino este mes?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "2a5ea0b1-27fa-4194-9dd7-e9a480cb4195",
+          "response_id": "resp_0eb2b390a087bda6006ab89e6192d887d18257e3cb8998f9f3"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "2a5ea0b1-27fa-4194-9dd7-e9a480cb4195",
+          "tool": "getProductProfits",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Queso Andino"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Queso Andino",
+            "profits": null,
+            "found": false
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "2a5ea0b1-27fa-4194-9dd7-e9a480cb4195",
+          "response_id": "resp_0eb2b390a087bda6006ab89e62b74087d1a2242326be48ce75",
+          "previous_response_id": "resp_0eb2b390a087bda6006ab89e6192d887d18257e3cb8998f9f3"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané con Queso Andino este mes?"
+            }
+          ],
+          "response_id": "resp_0eb2b390a087bda6006ab89e6192d887d18257e3cb8998f9f3",
+          "calls": [
+            {
+              "id": "fc_0eb2b390a087bda6006ab89e620f6c87d1bafc8b23a11a8b43",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Queso Andino\"}",
+              "call_id": "call_eg5uetp7ykfJimSaBbeJqRYg",
+              "name": "getProductProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0eb2b390a087bda6006ab89e6192d887d18257e3cb8998f9f3",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_eg5uetp7ykfJimSaBbeJqRYg",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Queso Andino\",\"profits\":null,\"found\":false}"
+            }
+          ],
+          "response_id": "resp_0eb2b390a087bda6006ab89e62b74087d1a2242326be48ce75",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "aclaración cliente",
+      "status": 200,
+      "body": {
+        "response": "Para ayudarte a identificar a tu mejor cliente, por favor dime el periodo que quieres analizar, por ejemplo: este mes, el último año, o un rango de fechas específico.",
+        "conversationId": "a2a9d6c5-ee9b-4e9d-88af-d9d4494159eb",
+        "responseId": "resp_09cb6c744dd7e314006ab89e63c40087d1b6c999ec88168138"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "a2a9d6c5-ee9b-4e9d-88af-d9d4494159eb",
+          "message": "¿Quién fue mi mejor cliente?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "a2a9d6c5-ee9b-4e9d-88af-d9d4494159eb",
+          "response_id": "resp_09cb6c744dd7e314006ab89e63c40087d1b6c999ec88168138"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Quién fue mi mejor cliente?"
+            }
+          ],
+          "response_id": "resp_09cb6c744dd7e314006ab89e63c40087d1b6c999ec88168138",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "aclaración producto",
+      "status": 200,
+      "body": {
+        "response": "¿Podrías indicarme para qué periodo te gustaría saber cuál fue el producto más vendido? Por ejemplo, este mes, la semana pasada, o algún rango de fechas específico.",
+        "conversationId": "026e90c4-7a26-4654-8356-72042536d655",
+        "responseId": "resp_01be8bbe8d1727a9006ab89e64f1f487d1b9d835f1769367f5"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "026e90c4-7a26-4654-8356-72042536d655",
+          "message": "¿Qué producto vendí más?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "026e90c4-7a26-4654-8356-72042536d655",
+          "response_id": "resp_01be8bbe8d1727a9006ab89e64f1f487d1b9d835f1769367f5"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Qué producto vendí más?"
+            }
+          ],
+          "response_id": "resp_01be8bbe8d1727a9006ab89e64f1f487d1b9d835f1769367f5",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "aclaración ganancia producto",
+      "status": 200,
+      "body": {
+        "response": "Para saber cuánto ganaste con Yogurt Natural, necesito que me indiques el periodo específico para consultar los datos. ¿Quieres saber la ganancia de un día, una semana, un mes o algún otro rango?",
+        "conversationId": "04f38e69-6311-425f-ab47-92191942d8c3",
+        "responseId": "resp_0a436137bfe2757d006ab89e66141c87d1beb5e16fe4a4e09e"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "04f38e69-6311-425f-ab47-92191942d8c3",
+          "message": "¿Cuánto gané con Yogurt Natural?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "04f38e69-6311-425f-ab47-92191942d8c3",
+          "response_id": "resp_0a436137bfe2757d006ab89e66141c87d1beb5e16fe4a4e09e"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané con Yogurt Natural?"
+            }
+          ],
+          "response_id": "resp_0a436137bfe2757d006ab89e66141c87d1beb5e16fe4a4e09e",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "completar aclaración",
+      "status": 200,
+      "body": {
+        "response": "Este mes has ganado 240 con Yogurt Natural. (Datos mock)",
+        "conversationId": "04f38e69-6311-425f-ab47-92191942d8c3",
+        "responseId": "resp_0a436137bfe2757d006ab89e683c9887d1a4540064906b5dc3"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "04f38e69-6311-425f-ab47-92191942d8c3",
+          "message": "Este mes",
+          "previous_response_id": "resp_0a436137bfe2757d006ab89e66141c87d1beb5e16fe4a4e09e",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "04f38e69-6311-425f-ab47-92191942d8c3",
+          "response_id": "resp_0a436137bfe2757d006ab89e672ec087d1acc58cec58ae258c",
+          "previous_response_id": "resp_0a436137bfe2757d006ab89e66141c87d1beb5e16fe4a4e09e"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "04f38e69-6311-425f-ab47-92191942d8c3",
+          "tool": "getProductProfits",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Yogurt Natural"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "product": "Yogurt Natural",
+            "profits": 240,
+            "found": true
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "04f38e69-6311-425f-ab47-92191942d8c3",
+          "response_id": "resp_0a436137bfe2757d006ab89e683c9887d1a4540064906b5dc3",
+          "previous_response_id": "resp_0a436137bfe2757d006ab89e672ec087d1acc58cec58ae258c"
+        }
+      ],
+      "protocol": [
+        {
+          "previous_response_id": "resp_0a436137bfe2757d006ab89e66141c87d1beb5e16fe4a4e09e",
+          "input": [
+            {
+              "role": "user",
+              "content": "Este mes"
+            }
+          ],
+          "response_id": "resp_0a436137bfe2757d006ab89e672ec087d1acc58cec58ae258c",
+          "calls": [
+            {
+              "id": "fc_0a436137bfe2757d006ab89e6795d487d19387f84f067311c9",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Yogurt Natural\"}",
+              "call_id": "call_KylEQkaio4VeWzK1AtLUBnl5",
+              "name": "getProductProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0a436137bfe2757d006ab89e672ec087d1acc58cec58ae258c",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_KylEQkaio4VeWzK1AtLUBnl5",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"product\":\"Yogurt Natural\",\"profits\":240,\"found\":true}"
+            }
+          ],
+          "response_id": "resp_0a436137bfe2757d006ab89e683c9887d1a4540064906b5dc3",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "anterior turno 1",
+      "status": 200,
+      "body": {
+        "response": "Este mes (septiembre 2026) ganaste 1000. Datos mock. ¿Quieres saber algo más?",
+        "conversationId": "29fb2c1d-ac26-4e76-bdb9-00d536f938ed",
+        "responseId": "resp_0a51e66f1aceecf2006ab89e6a494887d1a33a82663f38babd"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "29fb2c1d-ac26-4e76-bdb9-00d536f938ed",
+          "message": "¿Cuánto gané este mes?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "29fb2c1d-ac26-4e76-bdb9-00d536f938ed",
+          "response_id": "resp_0a51e66f1aceecf2006ab89e69303887d194956d006102f16b"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "29fb2c1d-ac26-4e76-bdb9-00d536f938ed",
+          "tool": "getProfits",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-30",
+            "profits": 1000
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "29fb2c1d-ac26-4e76-bdb9-00d536f938ed",
+          "response_id": "resp_0a51e66f1aceecf2006ab89e6a494887d1a33a82663f38babd",
+          "previous_response_id": "resp_0a51e66f1aceecf2006ab89e69303887d194956d006102f16b"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané este mes?"
+            }
+          ],
+          "response_id": "resp_0a51e66f1aceecf2006ab89e69303887d194956d006102f16b",
+          "calls": [
+            {
+              "id": "fc_0a51e66f1aceecf2006ab89e69a9f487d1be0ad08cbf628adf",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\"}",
+              "call_id": "call_9836xSKsfF1mTWUSwvc4eMau",
+              "name": "getProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0a51e66f1aceecf2006ab89e69303887d194956d006102f16b",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_9836xSKsfF1mTWUSwvc4eMau",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-30\",\"profits\":1000}"
+            }
+          ],
+          "response_id": "resp_0a51e66f1aceecf2006ab89e6a494887d1a33a82663f38babd",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "anterior turno 2",
+      "status": 200,
+      "body": {
+        "response": "En el mes anterior (agosto 2026) también ganaste 1000. Datos mock. ¿Deseas comparar con otro periodo?",
+        "conversationId": "29fb2c1d-ac26-4e76-bdb9-00d536f938ed",
+        "responseId": "resp_0a51e66f1aceecf2006ab89e6c625487d1828962a596eb7d07"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "29fb2c1d-ac26-4e76-bdb9-00d536f938ed",
+          "message": "¿Y el anterior?",
+          "previous_response_id": "resp_0a51e66f1aceecf2006ab89e6a494887d1a33a82663f38babd",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "29fb2c1d-ac26-4e76-bdb9-00d536f938ed",
+          "response_id": "resp_0a51e66f1aceecf2006ab89e6b55c087d1a9b62f829fcea9e9",
+          "previous_response_id": "resp_0a51e66f1aceecf2006ab89e6a494887d1a33a82663f38babd"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "29fb2c1d-ac26-4e76-bdb9-00d536f938ed",
+          "tool": "getProfits",
+          "arguments": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-08-31"
+          },
+          "result": {
+            "startDate": "2026-08-01",
+            "endDate": "2026-08-31",
+            "profits": 1000
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "29fb2c1d-ac26-4e76-bdb9-00d536f938ed",
+          "response_id": "resp_0a51e66f1aceecf2006ab89e6c625487d1828962a596eb7d07",
+          "previous_response_id": "resp_0a51e66f1aceecf2006ab89e6b55c087d1a9b62f829fcea9e9"
+        }
+      ],
+      "protocol": [
+        {
+          "previous_response_id": "resp_0a51e66f1aceecf2006ab89e6a494887d1a33a82663f38babd",
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Y el anterior?"
+            }
+          ],
+          "response_id": "resp_0a51e66f1aceecf2006ab89e6b55c087d1a9b62f829fcea9e9",
+          "calls": [
+            {
+              "id": "fc_0a51e66f1aceecf2006ab89e6bd62887d18dbb49950bceee0a",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-08-01\",\"endDate\":\"2026-08-31\"}",
+              "call_id": "call_nKZJjg1gYPWOKAVRYC1n7V3x",
+              "name": "getProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0a51e66f1aceecf2006ab89e6b55c087d1a9b62f829fcea9e9",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_nKZJjg1gYPWOKAVRYC1n7V3x",
+              "output": "{\"startDate\":\"2026-08-01\",\"endDate\":\"2026-08-31\",\"profits\":1000}"
+            }
+          ],
+          "response_id": "resp_0a51e66f1aceecf2006ab89e6c625487d1828962a596eb7d07",
+          "calls": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "label": "regresión rango original",
+      "status": 200,
+      "body": {
+        "response": "Ganaste 1000 en el periodo del 1 al 5 de septiembre de 2026. (Datos mock)",
+        "conversationId": "ed882d3f-6800-48c7-96f3-62587fa63c9d",
+        "responseId": "resp_0bc69509c1bb0168006ab89e6ea42087d1b3d543f5c4809be0"
+      },
+      "events": [
+        {
+          "event": "consulta",
+          "conversationId": "ed882d3f-6800-48c7-96f3-62587fa63c9d",
+          "message": "¿Cuánto gané del 1 de septiembre de 2026 al 5 de septiembre de 2026?",
+          "temporalContext": {
+            "today": "2026-09-27",
+            "year": 2026,
+            "timeZone": "America/La_Paz",
+            "yesterday": "2026-09-26",
+            "namedMonths": {
+              "enero": [
+                "2026-01-01",
+                "2026-01-31"
+              ],
+              "febrero": [
+                "2026-02-01",
+                "2026-02-28"
+              ],
+              "marzo": [
+                "2026-03-01",
+                "2026-03-31"
+              ],
+              "abril": [
+                "2026-04-01",
+                "2026-04-30"
+              ],
+              "mayo": [
+                "2026-05-01",
+                "2026-05-31"
+              ],
+              "junio": [
+                "2026-06-01",
+                "2026-06-30"
+              ],
+              "julio": [
+                "2026-07-01",
+                "2026-07-31"
+              ],
+              "agosto": [
+                "2026-08-01",
+                "2026-08-31"
+              ],
+              "septiembre": [
+                "2026-09-01",
+                "2026-09-30"
+              ],
+              "octubre": [
+                "2026-10-01",
+                "2026-10-31"
+              ],
+              "noviembre": [
+                "2026-11-01",
+                "2026-11-30"
+              ],
+              "diciembre": [
+                "2026-12-01",
+                "2026-12-31"
+              ]
+            },
+            "thisWeek": [
+              "2026-09-21",
+              "2026-09-27"
+            ],
+            "lastWeek": [
+              "2026-09-14",
+              "2026-09-20"
+            ],
+            "thisMonth": [
+              "2026-09-01",
+              "2026-09-30"
+            ],
+            "lastMonth": [
+              "2026-08-01",
+              "2026-08-31"
+            ]
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "ed882d3f-6800-48c7-96f3-62587fa63c9d",
+          "response_id": "resp_0bc69509c1bb0168006ab89e6d6b2887d1925480ca04296ff7"
+        },
+        {
+          "event": "tool_ejecutada",
+          "conversationId": "ed882d3f-6800-48c7-96f3-62587fa63c9d",
+          "tool": "getProfits",
+          "arguments": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-05"
+          },
+          "result": {
+            "startDate": "2026-09-01",
+            "endDate": "2026-09-05",
+            "profits": 1000
+          }
+        },
+        {
+          "event": "respuesta_openai",
+          "conversationId": "ed882d3f-6800-48c7-96f3-62587fa63c9d",
+          "response_id": "resp_0bc69509c1bb0168006ab89e6ea42087d1b3d543f5c4809be0",
+          "previous_response_id": "resp_0bc69509c1bb0168006ab89e6d6b2887d1925480ca04296ff7"
+        }
+      ],
+      "protocol": [
+        {
+          "input": [
+            {
+              "role": "user",
+              "content": "¿Cuánto gané del 1 de septiembre de 2026 al 5 de septiembre de 2026?"
+            }
+          ],
+          "response_id": "resp_0bc69509c1bb0168006ab89e6d6b2887d1925480ca04296ff7",
+          "calls": [
+            {
+              "id": "fc_0bc69509c1bb0168006ab89e6dfc7c87d1a241376479597971",
+              "type": "function_call",
+              "status": "completed",
+              "arguments": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-05\"}",
+              "call_id": "call_LCQ33SFscSprxOcNdOrgtAaA",
+              "name": "getProfits"
+            }
+          ]
+        },
+        {
+          "previous_response_id": "resp_0bc69509c1bb0168006ab89e6d6b2887d1925480ca04296ff7",
+          "input": [
+            {
+              "type": "function_call_output",
+              "call_id": "call_LCQ33SFscSprxOcNdOrgtAaA",
+              "output": "{\"startDate\":\"2026-09-01\",\"endDate\":\"2026-09-05\",\"profits\":1000}"
+            }
+          ],
+          "response_id": "resp_0bc69509c1bb0168006ab89e6ea42087d1b3d543f5c4809be0",
+          "calls": []
+        }
+      ],
+      "passed": true
+    }
+  ]
+}
