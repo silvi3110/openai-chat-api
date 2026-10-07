@@ -1,123 +1,29 @@
 ﻿# Cliente: httpYac - Rest Client (anweber.vscode-httpyac).
-# Cada turno 2 usa @ref y el JSON del turno 1; no requiere copiar el UUID.
-# Tras reiniciar el backend, ejecutar de nuevo turno 1 o Reset de httpYac.
+# Este archivo mantiene una convención válida para la suite de pruebas del proyecto.
+# Cada solicitud inicial usa un @name único y cada follow-up usa @ref con la referencia correspondiente.
+# Los valores de conversationId se reutilizan vía {{nombre.conversationId}}.
 
-﻿POST http://localhost:3000/chat
-Content-Type: application/json
-
-{
-    "message": "Hola servidor"
-}
-
-###
-POST http://localhost:3000/chat
-Content-Type: application/json
-
-{
-}
-
-###
-
-POST http://localhost:3000/chat
-Content-Type: application/json
-
-{
-    "message": 12345
-}
-
-### Prueba anterior
-POST http://localhost:3000/chat
-Content-Type: application/json
-
-{}
-
-### Prueba anterior
-POST http://localhost:3000/chat
-Content-Type: application/json
-
-{
-  "message": 12345
-}
-
-### Prueba anterior
-POST http://localhost:3000/chat
-Content-Type: application/json
-
-{
-  "message": "¿Cuál es la capital de Colombia?"
-}
-
-### Prueba anterior
-POST http://localhost:3000/chat
-Content-Type: application/json
-
-{
-  "message": "Explícame qué es inteligencia artificial en una frase"
-}
-
-### Prueba anterior
-POST http://localhost:3000/chat
-Content-Type: application/json
-
-{
-  "message": "¿Cuál es la capital de Argentina?"
-}
-
-###
-POST http://localhost:3000/chat
-Content-Type: application/json
-
-{
-
-}
-
-### Prueba anterior
-POST http://localhost:3000/chat
-Content-Type: application/json
-
-{
-  "message": "¿Quién es Simon Borrero?"
-}
-
-### Prueba anterior
-POST http://localhost:3000/chat
-Content-Type: application/json
-
-{
-  "message": "¿Cuál es la capital de Bolivia?"
-}
-
-
-### PRUEBA 1 - Function Calling básico
+### Turno 1 - consulta básica
+# @name turn1
 POST http://localhost:3000/function
 Content-Type: application/json
 
 {
-  "message": "¿Cuánto gané ayer?"
+  "message": "¿Cuánto gané este mes?"
 }
 
-
-### PRUEBA 2 - Ganancias de un periodo
-
+### Turno 1 - continuidad
+# @ref turn1
 POST http://localhost:3000/function
 Content-Type: application/json
 
 {
-  "message": "¿Cuánto gané del 1 de septiembre de 2026 al 5 de septiembre de 2026?"
+  "message": "¿Y el mes pasado?",
+  "conversationId": "{{turn1.conversationId}}"
 }
 
-
-### PRUEBA 3 - Ganancias de una fecha específica
-
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané el 5 de septiembre de 2026?"
-}
-
-
-### PRUEBA 4 - Producto más vendido
+### Turno 2 - producto más vendido
+# @name turn2
 POST http://localhost:3000/function
 Content-Type: application/json
 
@@ -125,26 +31,94 @@ Content-Type: application/json
   "message": "¿Cuál fue mi producto más vendido?"
 }
 
-
-### PRUEBA 5 - Producto menos vendido
+### Turno 2 - continuidad
+# @ref turn2
 POST http://localhost:3000/function
 Content-Type: application/json
 
 {
-  "message": "¿Cuál fue mi producto menos vendido del 1 de septiembre de 2026 al 5 de septiembre de 2026?"
+  "message": "¿Y el menos vendido?",
+  "conversationId": "{{turn2.conversationId}}"
 }
 
-
-### PRUEBA 6 - Cliente con más compras
+### Turno 3 - mejor cliente
+# @name turn3
 POST http://localhost:3000/function
 Content-Type: application/json
 
 {
-  "message": "¿Qué cliente realizó más compras del 1 de septiembre de 2026 al 5 de septiembre de 2026?"
+  "message": "¿Quién compró más en septiembre?"
 }
 
+### Turno 3 - continuidad
+# @ref turn3
+POST http://localhost:3000/function
+Content-Type: application/json
 
-### PRUEBA 7 - Cliente con más compras (inge Luis)
+{
+  "message": "¿Y en agosto?",
+  "conversationId": "{{turn3.conversationId}}"
+}
+
+### Turno 4 - ganancias de producto
+# @name turn4
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Cuánto gané con Yogurt Natural este mes?"
+}
+
+### Turno 4 - continuidad
+# @ref turn4
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Y el mes pasado?",
+  "conversationId": "{{turn4.conversationId}}"
+}
+
+### Turno 5 - resumen general
+# @name turn5
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Cuánto gané ayer?"
+}
+
+### Turno 5 - continuidad
+# @ref turn5
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Y la semana pasada?",
+  "conversationId": "{{turn5.conversationId}}"
+}
+
+### Turno 6 - revisión de producto
+# @name turn6
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Qué producto vendí más este mes?"
+}
+
+### Turno 6 - continuidad
+# @ref turn6
+POST http://localhost:3000/function
+Content-Type: application/json
+
+{
+  "message": "¿Y el que menos?",
+  "conversationId": "{{turn6.conversationId}}"
+}
+
+### Turno 7 - revisión de cliente
+# @name turn7
 POST http://localhost:3000/function
 Content-Type: application/json
 
@@ -152,215 +126,18 @@ Content-Type: application/json
   "message": "¿Qué cliente realizó más compras en septiembre?"
 }
 
-
-### PRUEBA 8 - Cliente con más compras (inge Luis)
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Qué cliente compró más en 10 de septiembre?"
-}
-
-
-### PRUEBA 9 - Cliente con más compras (inge Luis)
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuál fue el cliente que realizó más compras del 1 de septiembre de 2026 al 5 de septiembre de 2026?"
-}
-
-
-### PRUEBA 10 - Cliente con menos compras (inge Luis)
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuál fue mi producto menos vendido del 1 de septiembre de 2026 al 5 de septiembre de 2026?"
-}
-
-
-### ENTREGABLE 4 - FUNCTION CALLING + MULTI-TURN
-# Ejecutar cada turno 1 antes de su turno 2. httpYac reutiliza el UUID devuelto.
-# Reiniciar el servidor elimina las conversaciones; vuelve a ejecutar turno 1.
-
-### A - Año actual y mejor cliente
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Quién compró más en septiembre?"
-}
-
-### B - Año explícito 2024
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Quién compró más en agosto de 2024?"
-}
-
-### C - Producto más vendido
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuál vendí más este mes?"
-}
-
-### D - Fecha relativa
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané ayer?"
-}
-
-### E - Producto como argumento
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané con Yogurt Natural este mes?"
-}
-
-### MULTI-TURN 1 - Turno 1
-# @name multi1
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuál vendí más este mes?"
-}
-
-### MULTI-TURN 1 - Turno 2 (misma conversación)
-# @name multi1FollowUp
-# @ref multi1
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Y el que menos?",
-  "conversationId": "{{multi1.conversationId}}"
-}
-
-### MULTI-TURN 2 - Turno 1
-# @name multi2
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Quién compró más en septiembre?"
-}
-
-### MULTI-TURN 2 - Turno 2 (misma conversación)
-# @name multi2FollowUp
-# @ref multi2
+### Turno 7 - continuidad
+# @ref turn7
 POST http://localhost:3000/function
 Content-Type: application/json
 
 {
   "message": "¿Y en agosto?",
-  "conversationId": "{{multi2.conversationId}}"
+  "conversationId": "{{turn7.conversationId}}"
 }
 
-### MULTI-TURN 3 - Turno 1
-# @name multi3
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané este mes?"
-}
-
-### MULTI-TURN 3 - Turno 2 (misma conversación)
-# @name multi3FollowUp
-# @ref multi3
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Y el mes pasado?",
-  "conversationId": "{{multi3.conversationId}}"
-}
-
-### MULTI-TURN 4 - Turno 1
-# @name multi4
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané con Yogurt Natural este mes?"
-}
-
-### MULTI-TURN 4 - Turno 2 (misma conversación)
-# @name multi4FollowUp
-# @ref multi4
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Y el mes pasado?",
-  "conversationId": "{{multi4.conversationId}}"
-}
-
-### Fechas / aclaración / producto variable
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané hoy?"
-}
-
-### Fechas / aclaración / producto variable
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané esta semana?"
-}
-
-### Fechas / aclaración / producto variable
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané la semana pasada?"
-}
-
-### Fechas / aclaración / producto variable
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Quién compró más el 10 de septiembre?"
-}
-
-### Fechas / aclaración / producto variable
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Quién fue mi mejor cliente?"
-}
-
-### Fechas / aclaración / producto variable
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Qué producto vendí más?"
-}
-
-### Fechas / aclaración / producto variable
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané con Yogurt Natural?"
-}
-
-### Fechas / aclaración / producto variable
+### Turno 8 - producto puntual
+# @name turn8
 POST http://localhost:3000/function
 Content-Type: application/json
 
@@ -368,149 +145,12 @@ Content-Type: application/json
   "message": "¿Cuánto gané con Leche PIL este mes?"
 }
 
-### Fechas / aclaración / producto variable
+### Turno 8 - continuidad
+# @ref turn8
 POST http://localhost:3000/function
 Content-Type: application/json
 
 {
-  "message": "¿Cuánto gané con Queso Andino este mes?"
-}
-
-### Error - message ausente (400)
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{}
-
-### Error - message vacío (400)
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "   "
-}
-
-### Error - conversationId inválido (400)
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{"message":"¿Y en agosto?","conversationId":"incorrecto"}
-
-
-### ============================================
-### ENTREGABLE 4 - FUNCTION CALLING + MULTI-TURN
-### ============================================
-
-
-### PRUEBA 1 - Año actual
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Quién compró más en septiembre?"
-}
-
-
-### PRUEBA 2 - Año explícito
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Quién compró más en agosto de 2024?"
-}
-
-
-### PRUEBA 3 - Function Calling con fecha relativa
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané ayer?"
-}
-
-
-### PRUEBA 4 - Producto como argumento
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané con Yogurt Natural este mes?"
-}
-
-
-### ============================================
-### MULTI-TURN 5 - PRODUCTOS (ejemplo adicional)
-### ============================================
-
-### Turno 1
-# @name multi5
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuál vendí más este mes?"
-}
-
-
-### Turno 2 - Misma conversación
-# @name multi5FollowUp
-# @ref multi5
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Y el que menos?",
-  "conversationId": "{{multi5.conversationId}}"
-}
-
-
-### ============================================
-### MULTI-TURN 6 - GANANCIAS (ejemplo adicional)
-### ============================================
-
-### Turno 1
-# @name multi6
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané este mes?"
-}
-
-
-### Turno 2 - Misma conversación
-# @name multi6FollowUp
-# @ref multi6
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Y el mes pasado?",
-  "conversationId": "{{multi6.conversationId}}"
-}
-
-
-### ============================================
-### MULTI-TURN 7 - PRODUCTO + CONTEXTO (ejemplo adicional)
-### ============================================
-
-### Turno 1
-# @name multi7
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Cuánto gané con Yogurt Natural este mes?"
-}
-
-
-### Turno 2 - Mantiene producto y cambia periodo
-# @name multi7FollowUp
-# @ref multi7
-POST http://localhost:3000/function
-Content-Type: application/json
-
-{
-  "message": "¿Y el mes pasado?",
-  "conversationId": "{{multi7.conversationId}}"
+  "message": "¿Y para el mes pasado?",
+  "conversationId": "{{turn8.conversationId}}"
 }

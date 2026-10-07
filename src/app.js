@@ -15,11 +15,17 @@ function createApp({ client, log = () => {}, clock, store = createConversationSt
         const { message, conversationId } = req.body || {};
         if (typeof message !== 'string' || !message.trim()) throw new AppError(400, 'message debe ser texto no vacío');
         if (message.length > 4000) throw new AppError(400, 'message no puede superar 4000 caracteres');
-        conversation = store.acquire(conversationId, endpoint);
+        conversation = await store.acquire(conversationId, endpoint);
         result = await respond(message.trim(), conversation, endpoint === '/function');
+        await store.release(conversation, result.responseId, conversation.context);
+        conversation = undefined;
         res.json(result);
-      } catch (error) { next(error); }
-      finally { if (conversation) store.release(conversation, result?.responseId); }
+      } catch (error) {
+        if (conversation) {
+          try { await store.release(conversation, undefined, conversation.context); } catch {}
+        }
+        next(error);
+      }
     });
   }
   app.use((error, req, res, next) => {

@@ -8,7 +8,7 @@ test('test.http uses unique httpYac names and explicit references for every foll
   assert.equal(names.length, new Set(names).size, 'Duplicate request names');
   assert.ok(!text.includes('.response.body.$.'), 'Syntax belongs to another REST client');
   const followUps = text.split(/(?=^###)/m).filter(block => block.includes('# @ref '));
-  assert.equal(followUps.length, 7);
+  assert.equal(followUps.length, 8);
   for (const block of followUps) {
     const name = block.match(/^# @ref (\w+)\s*$/m)[1];
     assert.ok(names.includes(name), 'Missing first turn');

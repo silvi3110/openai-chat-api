@@ -9,10 +9,10 @@ const descriptions = {
 };
 const tools = Object.entries(descriptions).map(([name, description]) => {
   const properties = {
-    startDate: { type: 'string', description: 'Inicio inclusivo YYYY-MM-DD según el contexto temporal.' },
-    endDate: { type: 'string', description: 'Fin inclusivo YYYY-MM-DD según el contexto temporal.' },
+    startDate: { type: ['string', 'null'], description: 'Inicio inclusivo YYYY-MM-DD; null si el usuario no indicó un periodo recuperable.' },
+    endDate: { type: ['string', 'null'], description: 'Fin inclusivo YYYY-MM-DD; null si el usuario no indicó un periodo recuperable.' },
   };
-  if (name === 'getProductProfits') properties.product = { type: 'string', description: 'Nombre del producto solicitado por el usuario.' };
+  if (name === 'getProductProfits') properties.product = { type: ['string', 'null'], description: 'Nombre del producto solicitado; null si no se indicó ni puede recuperarse.' };
   return { type: 'function', name, description, strict: true,
     parameters: { type: 'object', properties, required: Object.keys(properties), additionalProperties: false } };
 });
@@ -28,17 +28,21 @@ async function executeTool(call) {
   let args;
   try { args = JSON.parse(call.arguments); } catch { throw new AppError(502, 'La tool recibió JSON inválido'); }
   const keys = tool.parameters.required;
-  if (!args || Array.isArray(args) || typeof args !== 'object' ||
-      Object.keys(args).some(key => !keys.includes(key)) ||
-      !validDate(args.startDate) || !validDate(args.endDate) || args.startDate > args.endDate ||
-      (keys.includes('product') && (typeof args.product !== 'string' || !args.product.trim() || args.product.length > 200))) {
+  if (!args || Array.isArray(args) || typeof args !== 'object' || Object.keys(args).some(key => !keys.includes(key))) {
+    throw new AppError(502, 'La tool recibió argumentos faltantes o inválidos');
+  }
+  const missing = keys.filter(key => args[key] === undefined || args[key] === null ||
+    (key === 'product' && typeof args[key] === 'string' && !args[key].trim()));
+  if (missing.length) return { args, missing };
+  if (!validDate(args.startDate) || !validDate(args.endDate) || args.startDate > args.endDate ||
+      (keys.includes('product') && (typeof args.product !== 'string' || args.product.length > 200))) {
     throw new AppError(502, 'La tool recibió argumentos faltantes o inválidos');
   }
   try {
     const result = call.name === 'getProductProfits'
       ? await functions[call.name](args.product, args.startDate, args.endDate)
       : await functions[call.name](args.startDate, args.endDate);
-    return { args, result };
+    return { args, result, missing: [] };
   } catch { throw new AppError(500, 'Error durante la ejecución de la función'); }
 }
 module.exports = { tools, executeTool, validDate };

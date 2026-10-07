@@ -1,196 +1,433 @@
-﻿# Entregable 4: Function Calling + multi-turn
+﻿# OpenAI Chat API
 
-## 1. ESTRUCTURA FINAL DEL PROYECTO
+Servidor Node.js con Express para interactuar con OpenAI Responses API, conservar conversaciones y ejecutar Function Calling con persistencia real en PostgreSQL.
+
+## 1. Descripción
+
+Este proyecto implementa un backend HTTP para conversaciones con OpenAI en un flujo multiturno. La API acepta mensajes de usuario, mantiene un identificador de conversación, reutiliza el contexto previo y, cuando corresponde, ejecuta herramientas definidas en el servidor antes de devolver una respuesta final.
+
+La parte central del Entregable 5 es la integración con PostgreSQL para registrar conversaciones y recuperar su estado, evitando depender exclusivamente de la memoria del proceso. La aplicación mantiene el flujo existente de Function Calling y conserva la lógica temporal del proyecto original, pero añade persistencia real para continuidad, reinicio y restauración.
+
+## 2. Tecnologías
+
+Las tecnologías realmente presentes en el proyecto son:
+
+- Node.js
+- Express
+- OpenAI Responses API
+- Function Calling
+- PostgreSQL
+- pg
+- dotenv
+- Node test runner (`node:test`)
+- Scripts de validación y prueba del proyecto
+
+No se incorporan tecnologías adicionales ni servicios paralelos que no existan en el código actual.
+
+## 3. Arquitectura
+
+La arquitectura actual está organizada en módulos CommonJS y sigue un flujo claro:
+
+Cliente
+→ Express
+→ lógica del asistente
+→ OpenAI Responses API
+→ Function Calling cuando corresponde
+→ almacenamiento PostgreSQL
+→ respuesta HTTP
+
+Principales archivos:
+
+- `server.js`: bootstrap del servicio, carga de variables de entorno, validación de conexión a PostgreSQL, migración y arranque del servidor Express.
+- `src/app.js`: define los endpoints HTTP y valida el cuerpo de las peticiones.
+- `src/assistant.js`: orquesta la llamada a OpenAI, reutiliza `previous_response_id`, ejecuta herramientas y conserva el contexto de la conversación.
+- `src/conversations.js`: implementa la lógica de adquisición/liberación de conversaciones, tanto en memoria como con PostgreSQL.
+- `src/db.js`: centraliza la configuración de conexión, validación y migración de PostgreSQL.
+- `src/openai.js`: crea el cliente de OpenAI usando `OPENAI_API_KEY` desde entorno.
+- `src/tools.js`: define las herramientas permitidas, valida argumentos y ejecuta la función correspondiente.
+- `src/time.js`: calcula contexto temporal y genera instrucciones de fechas para el asistente.
+- `src/errors.js`: define errores controlados usados por la API.
+- `migrations/`: contiene la migración de la base de datos.
+- `scripts/`: incluye scripts de migración y prueba de reinicio.
+- `tests/`: contiene la suite automatizada del proyecto.
+
+El contexto de una conversación se recupera desde PostgreSQL y se combina con el historial que OpenAI recibe en cada turno. La persistencia evita que la conversación dependa únicamente del proceso en ejecución.
+
+## 4. Variables de entorno
+
+El proyecto requiere las siguientes variables de entorno:
+
+- `OPENAI_API_KEY`
+- `DB_HOST`
+- `DB_PORT`
+- `DB_NAME`
+- `DB_USER`
+- `DB_PASSWORD`
+
+### Reglas actuales
+
+- `.env` contiene la configuración local y secretos del entorno.
+- `.env` está ignorado por Git mediante `.gitignore`.
+- `.env.example` sirve como plantilla base.
+- `DB_PASSWORD` debe obtenerse exclusivamente desde `process.env.DB_PASSWORD`.
+- No se utiliza `pgpass.conf`.
+- No se usa `PGPASSWORD` como fallback.
+- No se sobrescribe ni se reescribe la contraseña automáticamente.
+
+Ejemplo seguro:
+
+```env
+OPENAI_API_KEY=<tu_api_key>
+DB_HOST=127.0.0.1
+DB_PORT=5433
+DB_NAME=openai_chat_api
+DB_USER=postgres
+DB_PASSWORD=<tu_password_local>
+```
+
+## 5. Instalación
+
+1. Instalar dependencias:
+
+```bash
+npm install
+```
+
+2. Configurar el archivo `.env` local con las variables necesarias.
+
+3. Preparar PostgreSQL local con la base de datos y usuario indicados.
+
+4. Ejecutar la migración:
+
+```bash
+npm run db:migrate
+```
+
+5. Iniciar el servidor:
+
+```bash
+npm start
+```
+
+También está disponible modo desarrollo con:
+
+```bash
+npm run dev
+```
+
+## 6. Base de datos
+
+El proyecto usa PostgreSQL como backend de persistencia. La base de datos esperada es `openai_chat_api`, con host `127.0.0.1`, puerto `5433` y usuario `postgres`.
+
+La migración crea la tabla `openai_chat_api_conversations` si no existe. La definición actual está en [migrations/001_conversations.sql](migrations/001_conversations.sql) y incluye lo siguiente:
+
+- `conversation_id` (UUID primario)
+- `mode` (`/chat` o `/function`)
+- `previous_response_id`
+- `response_id`
+- `context` (JSONB)
+- `status` (`active`, `processing`, `expired`)
+- `created_at`
+- `updated_at`
+
+La tabla tiene un índice sobre `updated_at` y se usa como soporte de persistencia para las conversaciones. La migración es idempotente: puede ejecutarse repetidamente sin eliminar datos ni tablas existentes.
+
+Cuando comienza una nueva conversación, el backend genera un UUID y crea una fila nueva en PostgreSQL. En turnos posteriores, la misma conversación se recupera por `conversation_id` y se actualiza su estado y su contexto.
+
+## 7. Persistencia de conversaciones
+
+La persistencia se implementa en `src/conversations.js` usando PostgreSQL como almacenamiento principal del estado de la conversación.
+
+Se persisten los siguientes elementos:
+
+- `conversation_id`: identificador único de la conversación.
+- `response_id`: última respuesta válida del modelo asociada al turno.
+- `previous_response_id`: identificador retenido para continuidad con OpenAI.
+- `context`: JSON estructurado con datos de contexto y herramientas.
+- `status`: estado de la conversación (`active`, `processing`, `expired`).
+
+Esto permite que una conversación sobreviva a reinicios del proceso y pueda continuarse con el mismo `conversationId` en otro arranque del servidor.
+
+La persistencia evita depender exclusivamente de memoria en proceso: si el servidor se reinicia, la fila sigue en PostgreSQL y el backend puede recuperar la conversación y continuar desde ahí.
+
+## 8. Flujo multiturno
+
+El flujo multiturno sigue una lógica real y comprobada por los tests.
+
+### Turno 1
+
+1. El cliente envía un mensaje al endpoint `/chat` o `/function`.
+2. El backend crea o recupera la conversación.
+3. Se genera y persiste el `conversation_id` cuando la conversación es nueva.
+4. El asistente llama a OpenAI con el mensaje actual y el contexto necesario.
+5. El servidor guarda la respuesta relevante y el estado actualizado.
+
+### Turno 2
+
+1. El cliente vuelve a enviar un mensaje con el mismo `conversationId`.
+2. El backend recupera la fila de PostgreSQL.
+3. Se reutiliza `previous_response_id` y el contexto guardado.
+4. El modelo recibe el historial y la última respuesta asociada.
+5. El backend actualiza la conversación persistida con el nuevo estado.
+
+Si el mensaje no incluye todos los parámetros que necesita una herramienta, el sistema no ejecuta la tool inmediatamente. Guarda el contexto incompleto y solicita aclaración al usuario sobre los parámetros faltantes.
+
+## 9. Function Calling
+
+El Function Calling está implementado y se define en `src/tools.js` con las siguientes herramientas actuales:
+
+- `getProfits`
+- `getBestSellingProduct`
+- `getWorstSellingProduct`
+- `getTopCustomer`
+- `getProductProfits`
+
+Estas herramientas tienen validación de fechas y argumentos, y se ejecutan sobre funciones mock definidas en `src/mocks/functions.js`.
+
+El flujo real es:
+
+1. OpenAI decide que se requiere una tool.
+2. El backend valida el JSON y los argumentos recibidos.
+3. Si faltan parámetros, devuelve un estado de aclaración sin ejecutar la función.
+4. Si todo es válido, ejecuta la función correspondiente.
+5. El resultado se devuelve como `function_call_output` y se conserva el contexto en la conversación.
+
+Los `tool outputs` también forman parte del contexto persistido para que las siguientes interacciones puedan continuar sin perder la información previa.
+
+## 10. Manejo de fechas y contexto temporal
+
+La lógica temporal está en `src/time.js` y se usa para orientar el asistente en periodos como hoy, ayer, este mes, mes pasado, esta semana y otros rangos relativos.
+
+Comportamiento real implementado:
+
+- Usa `America/La_Paz` por defecto como zona horaria.
+- Calcula `today`, `yesterday`, `thisWeek`, `lastWeek`, `thisMonth`, `lastMonth`.
+- Valida fechas con formato `YYYY-MM-DD`.
+- Mantiene rangos inclusivos.
+- Hace prioridad al año explícito del usuario cuando se menciona.
+- Reutiliza el periodo recuperable del historial cuando la conversación ya tiene contexto.
+- Si faltan datos del periodo y no pueden inferirse, solicita aclaración en vez de inventar un rango.
+
+La lógica evita asumir fechas arbitrarias y usa el calendario del contexto como fuente de verdad.
+
+## 11. API
+
+La API actual expone dos endpoints HTTP:
+
+### 1) POST /chat
+
+Propósito: iniciar o continuar una conversación simple con OpenAI sin utilizar Function Calling.
+
+Body esperado:
+
+```json
+{
+  "message": "Hola servidor",
+  "conversationId": "uuid-opcional"
+}
+```
+
+Respuesta típica:
+
+```json
+{
+  "response": "Respuesta del asistente",
+  "conversationId": "uuid-generado-o-recuperado",
+  "responseId": "resp_..."
+}
+```
+
+Códigos relevantes:
+
+- `200`: respuesta exitosa
+- `400`: mensaje inválido o JSON incorrecto
+- `404`: conversación inexistente o expirada
+- `409`: conversación ocupada o se intenta continuar en un endpoint distinto
+- `413`: body demasiado grande
+- `500`: error interno del servidor
+- `502`: error de OpenAI o de la tool
+
+### 2) POST /function
+
+Propósito: iniciar o continuar una conversación con Function Calling activo.
+
+Body esperado:
+
+```json
+{
+  "message": "¿Cuánto gané este mes?",
+  "conversationId": "uuid-opcional"
+}
+```
+
+Respuesta típica:
+
+```json
+{
+  "response": "Respuesta final del asistente",
+  "conversationId": "uuid-generado-o-recuperado",
+  "responseId": "resp_..."
+}
+```
+
+Este endpoint conserva el contexto de herramientas y su salida para que el flujo multiturno pueda continuar.
+
+## 12. Ejecución
+
+Los comandos reales disponibles en `package.json` son:
+
+```bash
+npm start
+npm run dev
+npm run db:migrate
+npm test
+npm run test:restart
+```
+
+Para poner el proyecto en marcha:
+
+```bash
+npm install
+npm run db:migrate
+npm start
+```
+
+## 13. Pruebas
+
+La suite actual se ejecuta con el Node test runner y cubre varios aspectos del comportamiento real del proyecto.
+
+### `npm test`
+
+Valida:
+
+- cálculo de fechas y contexto temporal
+- validación de argumentos en tools
+- manejo de fechas reales y de rangos
+- mensajes incompletos y aclaraciones
+- flujo HTTP y respuestas controladas
+- errores seguros sin exponer secretos
+- persistencia en memoria y comportamiento del almacén de conversaciones
+
+### `node scripts/db-migrate.js`
+
+Ejecuta la migración PostgreSQL y verifica la configuración de base de datos y credenciales.
+
+### `npm run test:restart`
+
+Verifica que una conversación persiste en PostgreSQL, se reinicia el proceso y luego puede continuarse con el mismo `conversationId` sin perder el contexto.
+
+La verificación actual del proyecto concluyó con 15 pruebas pasando y 0 fallando.
+
+## 14. Prueba de reinicio
+
+La prueba de reinicio implementada en `scripts/test-restart.js` verifica el caso real siguiente:
+
+1. Se crea una conversación.
+2. Se ejecuta una primera solicitud y se guarda el estado en PostgreSQL.
+3. Se cierra o reinicia el proceso.
+4. Se inicia otro worker con la misma base de datos.
+5. Se reutiliza el mismo `conversationId`.
+6. El backend recupera `previous_response_id` y el contexto persistido desde PostgreSQL.
+7. La conversación continúa sin perder continuidad ni crear una nueva sesión.
+
+El test permite comprobar además que una conversación nueva queda separada y no reutiliza el mismo identificador.
+
+## 15. Seguridad y buenas prácticas
+
+Se implementan las medidas que sí existen en el proyecto:
+
+- Se usan variables de entorno para secretos y configuración local.
+- `.env` se mantiene ignorado por Git.
+- No se almacenan API keys ni contraseñas dentro del código fuente.
+- `DB_PASSWORD` se toma de `process.env.DB_PASSWORD`.
+- No se usa `pgpass.conf` ni `PGPASSWORD` como fallback.
+- La configuración de PostgreSQL se valida antes de crear el pool.
+- Las consultas de PostgreSQL usan parámetros (`$1`, `$2`, etc.) en lugar de interpolar valores directamente en el SQL.
+- Los errores HTTP no exponen detalles internos ni secretos.
+
+## 16. Estructura del proyecto
 
 ```text
 openai-chat-api/
-├── .env                         (existente, privado, sin modificar)
-├── .gitignore                   (existente)
+├── .env
+├── .env.example
+├── .gitignore
+├── migrations/
+│   └── 001_conversations.sql
 ├── package.json
-├── package-lock.json            (sin modificar)
+├── package-lock.json
+├── scripts/
+│   ├── db-migrate.js
+│   └── test-restart.js
 ├── server.js
-├── test.http
-├── README.md
-├── verification-live.json       (evidencia generada por test:live)
-├── verification-httpyac.json    (ejecución con el motor de la extensión)
 ├── src/
 │   ├── app.js
 │   ├── assistant.js
 │   ├── conversations.js
+│   ├── db.js
 │   ├── errors.js
 │   ├── openai.js
 │   ├── time.js
 │   ├── tools.js
 │   └── mocks/
-│       ├── data.js
-│       └── functions.js
-├── scripts/
-│   ├── verify-live.js
-│   └── verify-httpyac.js
-└── tests/
-    ├── app.test.js
-    └── http-file.test.js
+│       ├── functions.js
+│       └── ...
+├── test.http
+├── tests/
+│   ├── app.test.js
+│   ├── conversations-pg.test.js
+│   ├── db.test.js
+│   └── http-file.test.js
+├── README.md
+└── node_modules/
 ```
 
-Se omiten `.git/` y `node_modules/` del árbol.
+Se omite la carpeta `node_modules/` en una vista conceptual del repositorio; el resto corresponde al proyecto real.
 
-## 2. ARCHIVOS CREADOS
+## 17. Alcance del Entregable 5
 
-| Archivo | Responsabilidad |
-| --- | --- |
-| `src/app.js` | Express, endpoints, validación HTTP y respuestas de error seguras. Permite inyectar el cliente para pruebas. |
-| `src/assistant.js` | Orquesta Responses API y el ciclo de ejecución de tools; máximo seis interacciones por turno. |
-| `src/conversations.js` | UUID por conversación, último response ID, caducidad y bloqueo de turnos simultáneos. |
-| `src/errors.js` | Errores controlados con código HTTP y mensaje público. |
-| `src/openai.js` | Cliente oficial, clave desde entorno, timeout de 30 segundos por intento y un reintento. |
-| `src/time.js` | Calendario calculado con Node.js e instrucciones temporales/conversacionales. |
-| `src/tools.js` | Cinco esquemas estrictos, lista permitida, validación y despacho a funciones. |
-| `src/mocks/data.js` | Fixtures empresariales centralizados. |
-| `src/mocks/functions.js` | Funciones existentes y `getProductProfits`, reemplazables por acceso a Tiendishop. |
-| `tests/app.test.js` | Pruebas locales con `node:test`, HTTP real y cliente OpenAI controlado. No prueban la interpretación del modelo. |
-| `scripts/verify-live.js` | Pruebas HTTP con OpenAI real y aserciones sobre tools, argumentos y conversaciones. Consume tokens. |
-| `verification-live.json` | Resultado de la última ejecución real, respuestas y logs de demostración. |
-| `scripts/verify-httpyac.js` | Ejecuta los siete pares de test.http con el motor incluido en la extensión local 6.16.7, OpenAI real y aserciones del protocolo. |
-| `tests/http-file.test.js` | Impide nombres duplicados y referencias incompatibles con httpYac. |
-| `verification-httpyac.json` | Evidencia de UUID, tools, fechas y call_id de los siete pares. |
-| `README.md` | Reporte técnico e instrucciones reproducibles. |
+El Entregable 5 incorpora lo siguiente:
 
-## 3. ARCHIVOS MODIFICADOS
+- PostgreSQL real como backend de persistencia
+- migraciones de base de datos
+- almacenamiento de conversaciones
+- recuperación de conversaciones
+- continuidad de `conversation_id`
+- continuidad de `previous_response_id`
+- flujo multiturno persistente
+- compatibilidad con la arquitectura existente
+- pruebas automatizadas de persistencia y reinicio
 
-- `server.js`: pasó de unas 816 líneas a la inicialización de configuración, cliente, logs y servidor.
-- `package.json`: entrada `server.js`; scripts `start`, `dev`, `test`, `test:live`. Sin nuevas dependencias ni actualización del SDK.
-- `test.http`: conserva los requests anteriores, corrige separadores y agrega la sección **ENTREGABLE 4 - FUNCTION CALLING + MULTI-TURN**.
+Lo que no forma parte del Entregable 5 es la integración con datos empresariales reales ni la sustitución del mock actual por una fuente autorizada de negocio. Esa evolución queda para una etapa posterior y no está implementada en el proyecto actual.
 
-La implementación inicial y las modificaciones que ya estaban en `server.js` y `test.http` se revisaron antes de editar. `.env` no se reescribió ni se imprimió.
+## 18. Estado actual
 
-## 4. REFACTORIZACIÓN
+| Componente | Estado |
+|---|---|
+| API | Implementado |
+| OpenAI Responses API | Implementado |
+| Function Calling | Implementado |
+| PostgreSQL | Implementado |
+| Persistencia | Implementado |
+| Migraciones | Implementado |
+| Multiturno | Implementado |
+| Recuperación | Implementado |
+| Reinicio | Validado |
+| Tests | Validado |
 
-Salieron de `server.js` los esquemas, mocks, funciones, validaciones HTTP, llamadas al modelo y ejecución de tools. Cada responsabilidad queda en un módulo CommonJS pequeño, sin frameworks nuevos ni microservicios.
+## 19. Troubleshooting
 
-Se conservaron `/chat` (conversación de texto), `/function` (con tools), `response` en el JSON y los nombres `getProfits`, `getBestSellingProduct`, `getWorstSellingProduct`, `getTopCustomer`.
+Problemas comunes y cómo verificarlos:
 
-Se corrigió un defecto previo: `getWorstSellingProduct` exigía que el modelo inventara el producto menos vendido y luego el dispatcher ni siquiera lo pasaba. Ahora recibe las fechas y obtiene el producto desde el mock. El nombre permanece igual.
+- PostgreSQL apagado o no accesible: revisar `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER` y `DB_PASSWORD` en `.env`.
+- Puerto incorrecto: confirmar que el servidor se está levantando en el puerto esperado.
+- Base de datos inexistente: crear la base indicada antes de ejecutar la migración.
+- Variables `.env` faltantes: revisar el archivo local y la configuración del entorno.
+- Contraseña incorrecta: revisar `DB_PASSWORD` en `.env` y que coincide con la configuración del usuario PostgreSQL local.
+- Migración no ejecutada: correr `npm run db:migrate` antes de usar la aplicación.
+- API key faltante: verificar `OPENAI_API_KEY` en el entorno local.
 
-## 5. FUNCTION CALLING
-
-1. El usuario envía `message` y opcionalmente `conversationId`.
-2. Express valida el request y obtiene/bloquea la conversación.
-3. El backend envía mensaje, instrucciones temporales, historial enlazado y esquemas a Responses API.
-4. OpenAI interpreta intención y produce `function_call` con nombre, argumentos y `call_id`.
-5. El backend valida nombre permitido, JSON, campos, fechas reales y orden del rango; el producto debe ser texto no vacío cuando corresponde.
-6. El backend ejecuta la función local, que obtiene datos mock.
-7. Devuelve el JSON como `function_call_output` con el mismo `call_id` y enlaza la respuesta que solicitó la tool.
-8. OpenAI redacta la respuesta. Si solicita más tools, se repite el ciclo dentro del límite.
-9. Se guarda el ID de la respuesta final exitosa y se devuelve al cliente.
-
-OpenAI no ejecuta funciones locales ni accede a una base de datos. Los esquemas estrictos complementan, pero no reemplazan, la validación del backend.
-
-Errores: 400 para cuerpo/mensaje/UUID inválidos, 404 para conversación inexistente o expirada, 409 para turno simultáneo o endpoint distinto, 413 para body excesivo, 502 para error del proveedor o tool inválida, 503 para rate limit/capacidad temporal, 500 para fallo de ejecución local. No se devuelven stacks ni errores crudos del SDK.
-
-## 6. MANEJO DEL AÑO
-
-`new Date()` obtiene el instante real del sistema en cada turno. `Intl.DateTimeFormat` lo convierte a `APP_TIMEZONE`, por defecto `America/La_Paz`. El backend calcula hoy, ayer, mes actual/anterior y semana actual/anterior. No existe un año fijo en el código de producción.
-
-Reglas enviadas en cada interacción:
-
-- Año explícito: respetarlo, incluyendo 2024 o cualquier otro año válido.
-- Mes/día sin año: año del servidor; un año establecido explícitamente en la conversación puede mantenerse cuando sigue siendo pertinente.
-- Mes nombrado: mes completo; día nombrado: ese único día.
-- Este mes: mes completo de calendario. Esta semana: desde el lunes hasta hoy. Si solicita explícitamente hasta hoy, el fin es hoy.
-- Mes/semana pasado: periodo completo inmediatamente anterior al actual.
-- “El anterior”: periodo anterior al que se venía consultando.
-- Periodo omitido: reutilizar el del historial; sin contexto, solicitar aclaración.
-
-El modelo interpreta el lenguaje y el backend valida fechas reales `YYYY-MM-DD` y `startDate <= endDate`. No hay detección de frases mediante if/else. Un año como 2023 es válido si el usuario lo solicita; lo que se evita mediante contexto temporal es asumirlo arbitrariamente. La interpretación semántica sigue dependiendo del modelo y se comprueba con pruebas reales.
-
-## 7. MULTI-TURN
-
-Primer request, sin identificador:
-
-```json
-{"message":"¿Cuál vendí más este mes?"}
-```
-
-El backend genera un UUID y devuelve:
-
-```json
-{"response":"...","conversationId":"UUID generado","responseId":"resp_..."}
-```
-
-Segundo request al mismo endpoint:
-
-```json
-{"message":"¿Y el que menos?","conversationId":"UUID generado"}
-```
-
-Un `Map` mantiene UUID → último response ID exitoso. El seguimiento lleva el ID al proveedor: el modelo recibe el contexto anterior, incluidos resultados de tools, y puede inferir intención, producto y fechas. No se simulan respuestas ni se interpretan frases manualmente.
-
-Cada UUID tiene estado separado; omitirlo crea otra conversación. Hay un máximo de 1000 conversaciones y caducidad de una hora sin actividad, depurada al recibir requests. Reiniciar el proceso pierde el mapa. Un fallo conserva el último turno exitoso; una conversación nueva fallida se descarta. Un segundo request simultáneo al mismo UUID recibe 409. Las conversaciones de `/chat` y `/function` no se intercambian.
-
-## 8. RESPONSE_ID / CONTINUIDAD
-
-Se usa `previous_response_id` con `store: true`. Está soportado por el SDK **OpenAI 7.7.0 instalado**, verificado en `node_modules/openai/resources/responses/responses.d.ts`.
-
-Tras una tool, se enlaza el ID de la respuesta que la solicitó. Entre turnos, se enlaza el ID de la respuesta final. Las instrucciones se reenvían porque no se heredan automáticamente al usar este mecanismo. `conversationId` es un UUID del backend; no es un objeto de Conversations API ni un response ID enviado por el usuario.
-
-Es una solución sencilla para este POC; no requiere crear recursos de Conversations API. El backend controla qué cadena se continúa, y OpenAI mantiene las respuestas almacenadas. La memoria local no implica que el historial esté almacenado exclusivamente en el proceso.
-
-Referencias oficiales consultadas:
-
-- [Conversation state](https://developers.openai.com/api/docs/guides/conversation-state)
-- [Function calling](https://developers.openai.com/api/docs/guides/function-calling)
-
-## 9. DATOS MOCK
-
-| Consulta | Resultado simulado |
-| --- | --- |
-| Ganancia total | 1000, sin moneda definida |
-| Producto más vendido | Leche PIL, 150 unidades |
-| Producto menos vendido | Yogurt Natural, 20 unidades |
-| Cliente con más compras | Juan Pérez, 25 compras |
-| Ganancia de Yogurt Natural | 240 |
-| Ganancia de Leche PIL | 600 |
-| Producto desconocido | `found: false`, `profits: null`; no se inventa un importe |
-
-Las fechas se reciben y se devuelven correctamente, pero los importes/cantidades son fixtures constantes: no se calculan ventas históricas. Las instrucciones piden indicar que son datos mock; el modelo puede omitir esa etiqueta en alguna respuesta, por lo que la demostración debe presentarse explícitamente como POC con datos simulados. `product` se extrae de la consulta o historial; no es un argumento fijo.
-
-## 10. FUTURA INTEGRACIÓN CON TIENDISHOP
-
-Sustituir las implementaciones de `src/mocks/functions.js` por consultas a la API o repositorio autorizado de Tiendishop, conservando los contratos de entrada/salida. El dispatcher ya espera resultados asíncronos. Definir entonces moneda, zona horaria del negocio y reglas contables reales.
-
-La identidad del usuario y el negocio autorizado deberán provenir de autenticación del backend, nunca de un argumento inventado por el modelo. OpenAI sigue recibiendo únicamente los datos necesarios devueltos por las funciones; no necesita credenciales de Tiendishop ni acceso directo a su base de datos.
-
-## 11. SEGUNDA LLAMADA A OPENAI
-
-1. **¿Es obligatoria?** No para obtener el JSON o responder desde el backend. Sí se necesita otra interacción si se desea que el modelo procese el resultado y redacte la respuesta dentro de este flujo.
-2. **Respuesta directa desde JSON:** permitiría una plantilla determinista y ahorrar esa interacción, pero habría que incorporar explícitamente el resultado al contexto antes de continuar la conversación.
-3. **Por qué devolverlo:** el modelo convierte datos en lenguaje natural, integra varias tools y puede manejar resultados ausentes o aclaraciones.
-4. **Multi-turn:** la respuesta final queda enlazada a la solicitud y al resultado de la tool. Un seguimiento puede reutilizar producto, intención y periodo con evidencia en el historial.
-5. **Costos:** añade latencia, tokens de entrada/salida, dependencia del proveedor y otra posibilidad de fallo. El historial también aumenta el contexto procesado; `previous_response_id` no hace gratuitos los turnos anteriores.
-
-Por estas razones se conserva el flujo original y se amplía para múltiples rondas acotadas.
-
-## 12. PRUEBAS
-
-**Verificación ejecutada el 26 de septiembre de 2026:** 9 pruebas locales aprobadas y 29 requests reales con OpenAI aprobados, sin fallos en la ejecución final. Se inició además `npm start` en el puerto 3000 y se comprobaron ambos endpoints. Sintaxis de todos los módulos y JSON de los 55 requests de `test.http` verificados. El servidor de comprobación se detuvo al finalizar; para la demostración ejecutar `npm start`.
-
-La primera conexión quedó bloqueada por la red del entorno restringido; la verificación real se completó con acceso autorizado. Durante las pruebas se ajustó la regla de meses completos para eliminar una inconsistencia entre mes nombrado y mes actual. La evidencia final está en `verification-live.json`: tools, argumentos, resultados y cadenas de response IDs. Septiembre se ejecutó con el año 2026 obtenido del sistema, agosto de 2024 respetó 2024 y ninguna tool de esta batería recibió 2023 arbitrariamente.
-
-Requisitos: Node.js compatible con el SDK (verificado con v24.19.0), dependencias instaladas y `OPENAI_API_KEY` en el `.env` existente. Opcionales: `PORT` (3000), `OPENAI_MODEL` (`gpt-4.1-mini`), `APP_TIMEZONE` (`America/La_Paz`). Ejecutar:
-
-```sh
-npm test
-npm start
-```
-
-En VS Code con **httpYac - Rest Client 6.16.7** (`anweber.vscode-httpyac`), abrir `test.http`:
-
-1. Ejecutar requests anteriores de `/chat` y `/function`; los mensajes sin periodo pueden pedir aclaración.
-2. En **ENTREGABLE 4**, ejecutar **A → B → C → D → E**.
-3. Ejecutar **MULTI-TURN 1: Turno 1 → Turno 2**; observar best → worst con mismas fechas.
-4. Ejecutar **MULTI-TURN 2: Turno 1 → Turno 2**; observar top customer en septiembre → agosto, mismo año.
-5. Ejecutar **MULTI-TURN 3: Turno 1 → Turno 2**; observar ganancias mes actual → mes pasado.
-6. Ejecutar **MULTI-TURN 4: Turno 1 → Turno 2**; observar `getProductProfits`, mismo `product`, fechas nuevas.
+No se documentan contraseñas reales ni secretos en este README y no se recomienda almacenar información sensible en archivos de código.
 7. Ejecutar pruebas adicionales de hoy/semanas/día sin año, aclaraciones, otro producto y producto desconocido.
 8. Ejecutar los errores: se espera 400 sin llamadas a OpenAI.
 

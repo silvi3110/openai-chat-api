@@ -34,7 +34,9 @@ test('calendar handles timezone, leap year, month/year boundaries and weeks', ()
 });
 
 test('backend validates unknown tools, JSON, real dates, range and product', async () => {
-  for (const invalid of [call('toString'), { ...call(), arguments: '{' }, call('getProfits', {}), call('getProfits', {startDate:'2023-02-29',endDate:'2023-03-01'}), call('getProfits', {startDate:'2024-03-01',endDate:'2024-02-01'}), call('getProfits', {...dates, product:'extra'}), call('getProductProfits', {...dates, product:' '})]) await assert.rejects(executeTool(invalid), error => error.status === 502);
+  for (const invalid of [call('toString'), { ...call(), arguments: '{' }, call('getProfits', {startDate:'2023-02-29',endDate:'2023-03-01'}), call('getProfits', {startDate:'2024-03-01',endDate:'2024-02-01'}), call('getProfits', {...dates, product:'extra'})]) await assert.rejects(executeTool(invalid), error => error.status === 502);
+  assert.deepEqual((await executeTool(call('getProfits', {}))).missing, ['startDate', 'endDate']);
+  assert.deepEqual((await executeTool(call('getProductProfits', {...dates, product:' '}))).missing, ['product']);
   assert.equal((await executeTool(call())).result.profits, 1000);
   assert.equal((await executeTool(call('getWorstSellingProduct'))).result.product, 'Yogurt Natural');
   assert.equal((await executeTool(call('getProductProfits', {...dates, product:'Leche PIL'}))).result.profits, 600);
@@ -44,6 +46,58 @@ test('backend validates unknown tools, JSON, real dates, range and product', asy
     functions.getProfits = () => { throw new Error('private failure'); };
     await assert.rejects(executeTool(call()), error => error.status === 500 && !error.message.includes('private'));
   } finally { functions.getProfits = original; }
+});
+
+test('mock sales data includes enough variation for multi-product, multi-customer and multi-period demonstrations', () => {
+  const { sales, customers, productProfits, bestProduct, worstProduct, topCustomer } = require('../src/mocks/data');
+  assert.ok(Array.isArray(sales) && sales.length >= 10, 'expected a richer sales record set');
+  assert.ok(new Set(sales.map(item => item.product)).size >= 4, 'expected multiple products');
+  assert.ok(new Set(sales.map(item => item.customer)).size >= 3, 'expected multiple customers');
+  assert.ok(sales.some(item => item.date.startsWith('2024-')) && sales.some(item => item.date.startsWith('2026-')),
+    'expected date coverage across multiple periods');
+  assert.ok(productProfits.some(item => item.product === 'Leche PIL'));
+  assert.ok(productProfits.some(item => item.product === 'Yogurt Natural'));
+  assert.ok(bestProduct.product && worstProduct.product && topCustomer.customer);
+});
+
+test('incomplete tool arguments are returned for clarification without running a mock', async () => {
+  let calls = 0;
+  const original = functions.getProductProfits;
+  functions.getProductProfits = (...args) => { calls++; return original(...args); };
+  try {
+    const execution = await executeTool(call('getProductProfits', { startDate: null, endDate: null, product: 'Yogurt Natural' }));
+    assert.deepEqual(execution.missing, ['startDate', 'endDate']);
+    assert.equal(calls, 0);
+  } finally { functions.getProductProfits = original; }
+});
+
+test('clarification persists partial arguments and the follow-up executes with the supplied period', async () => {
+  const requests = [];
+  const replies = [
+    response('r1', [call('getProductProfits', { startDate: null, endDate: null, product: 'Yogurt Natural' })]),
+    response('r2', [], '¿Para qué periodo quieres consultar las ganancias de Yogurt Natural?'),
+    response('r3', [call('getProductProfits', { ...dates, product: 'Yogurt Natural' })]),
+    response('r4'),
+  ];
+  const client = { responses: { create: async request => { requests.push(request); return replies.shift(); } } };
+  let calls = 0;
+  const original = functions.getProductProfits;
+  functions.getProductProfits = (...args) => { calls++; return original(...args); };
+  try {
+    await withServer(client, async post => {
+      const first = await post({ message: '¿Cuánto gané con Yogurt Natural?' });
+      assert.equal(first.status, 200);
+      assert.match(first.body.response, /periodo/i);
+      assert.equal(calls, 0);
+      const missing = JSON.parse(requests[1].input[0].output);
+      assert.deepEqual(missing.missing_parameters, ['startDate', 'endDate']);
+      const second = await post({ message: 'En agosto.', conversationId: first.body.conversationId });
+      assert.equal(second.status, 200);
+      assert.equal(requests[2].previous_response_id, 'r2');
+      assert.match(requests[2].instructions, /pendingTool/);
+      assert.equal(calls, 1);
+    });
+  } finally { functions.getProductProfits = original; }
 });
 
 test('conversation store rejects invalid, missing, busy, mismatched and expired IDs', () => {
@@ -73,7 +127,8 @@ test('HTTP preserves tool outputs, final response continuity and independent con
     assert.equal(second.status, 200);
     assert.equal(requests[2].previous_response_id, 'r2');
     assert.equal(second.body.responseId, 'r4');
-    assert.equal(requests[2].instructions, requests[0].instructions);
+    assert.notEqual(requests[2].instructions, requests[0].instructions);
+    assert.match(requests[2].instructions, /"lastTool"/);
     const independent = await post({message:'hello'}, '/chat');
     assert.equal(independent.status, 200);
     assert.notEqual(independent.body.conversationId, first.body.conversationId);
